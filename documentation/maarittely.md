@@ -6,7 +6,8 @@ Työni on visuaalinen reitinhakija. :rocket:
 Työni tulee vertailemaan **leveyshakua**, **syvyyshakua** ja **Dijkstran** algoritmejä keskenään.
 <br />
 Ohjelma tuotetaan Javalla ja JavaFXää käyttäen.
-
+<br /> 
+Ohjelma tulee olemaan suomen kielellä.
 * Syvyyshaku: _`O(n + m)`_
 * Leveyshaku: _`O(n + m)`_
 * Dijkstra:   _`O(n + m log m)`_
