@@ -3,7 +3,7 @@
 #### Opinto-ohjelma: tietojenkäsittelytieteen kandidaatti
 
 Työni on visuaalinen reitinhakija. :rocket:
-Työni tulee vertailemaan leveyshakua, syvyyshakua ja Dijkstran algoritmejä keskenään.
+Työni tulee vertailemaan **leveyshakua**, **syvyyshakua** ja **Dijkstran** algoritmejä keskenään.
 Ohjelma tuotetaan Javalla.
 
 * Syvyyshaku: _`O(n + m)`_
