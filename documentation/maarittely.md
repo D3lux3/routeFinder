@@ -4,7 +4,7 @@
 
 Työni on visuaalinen reitinhakija. :rocket:
 Työni tulee vertailemaan **leveyshakua**, **syvyyshakua** ja **Dijkstran** algoritmejä keskenään.
-Ohjelma tuotetaan Javalla.
+Ohjelma tuotetaan Javalla ja JavaFXää käyttäen.
 
 * Syvyyshaku: _`O(n + m)`_
 * Leveyshaku: _`O(n + m)`_
@@ -14,5 +14,5 @@ Käyttäjällä on mahdollisuus valita aloituspiste ja maali. Näiden pisteiden 
 
 
 
-Lähteet:
+Lähteet;
 https://www.cs.helsinki.fi/u/ahslaaks/tirakirja/
