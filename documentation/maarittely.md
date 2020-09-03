@@ -1,6 +1,7 @@
 # Määrittelydokumentti
 #### Tekijä: Daniyal Haapaniemi
 #### Opinto-ohjelma: tietojenkäsittelytieteen kandidaatti
+#### Projektin nimi: routeFinder
 
 Työni on visuaalinen reitinhakija. :rocket:
 Työni tulee vertailemaan **leveyshakua**, **syvyyshakua** ja **Dijkstran** algoritmejä keskenään.
