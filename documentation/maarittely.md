@@ -1,23 +1,24 @@
----
-title: Määrittelydokumentti
-created: '2020-09-03T13:19:54.079Z'
-modified: '2020-09-03T14:36:14.773Z'
----
-
 # Määrittelydokumentti
+#### Tekijä: Daniyal Haapaniemi
 #### Opinto-ohjelma: tietojenkäsittelytieteen kandidaatti
+#### Projektin nimi: routeFinder
 
-Työni on visuaalinen reitinhakija.
-Työni tulee vertailemaan leveyshakua, syvyyshakua ja Dijkstran algoritmejä keskenään.
-Ohjelma tuotetaan Javalla.
+Työni on visuaalinen reitinhakija. :rocket:
+Työni tulee vertailemaan **leveyshakua**, **syvyyshakua** ja **Dijkstran** algoritmejä keskenään.
+<br />
+Ohjelma tuotetaan Javalla ja JavaFXää käyttäen.
+<br /> 
+Ohjelma tulee olemaan suomen kielellä.
 
-Syvyyshaku: `O(n + m)`
-Leveyshaku: `O(n + m)`
-Dijkstra:   `O(n + m log m)`
+Tavoittelen seuraavia aikavaatimuksia:
+* Syvyyshaku: _`O(n + m)`_
+* Leveyshaku: _`O(n + m)`_
+* Dijkstra:   _`O(n + m log m)`_
 
+<br />
 Käyttäjällä on mahdollisuus valita aloituspiste ja maali. Näiden pisteiden välille käyttäjä voi piirtää seinää tai vaikka labyrintin johon ohjelma yrittää muodostaa reitin.
 
 
 
-Lähteet:
+Lähteet;
 https://www.cs.helsinki.fi/u/ahslaaks/tirakirja/
