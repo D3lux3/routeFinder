@@ -8,6 +8,10 @@
     <artifactId>routeFinder</artifactId>
     <version>1.0</version>
 
+    <properties>
+        <java.version>10</java.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -27,6 +31,7 @@
                 </configuration>
                 <version>3.3</version>
             </plugin>
+
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
