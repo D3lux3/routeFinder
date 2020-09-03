@@ -8,6 +8,8 @@ Työni tulee vertailemaan **leveyshakua**, **syvyyshakua** ja **Dijkstran** algo
 Ohjelma tuotetaan Javalla ja JavaFXää käyttäen.
 <br /> 
 Ohjelma tulee olemaan suomen kielellä.
+
+Tavoittelen seuraavia aikavaatimuksia:
 * Syvyyshaku: _`O(n + m)`_
 * Leveyshaku: _`O(n + m)`_
 * Dijkstra:   _`O(n + m log m)`_
