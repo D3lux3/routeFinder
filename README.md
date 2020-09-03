@@ -1,5 +1,5 @@
-# routeFinder :rocket:
+# routeFinder :rocket: :mag:
 
 
-### Dokumentaatio
+### Dokumentaatio :memo:
 * [Määrittelydokumentti](https://github.com/D3lux3/routeFinder/blob/master/documentation/maarittely.md)
