@@ -1,7 +1,7 @@
 # Viikkoraportti 1
 
 ### Mitä olen saanut aikaan:
-Tällä viikolla olen saanut aikaan toimivan graafisen käyttöliittymän projektia varten.
+Tällä viikolla olen saanut aikaan toimivan graafisen käyttöliittymän projektia varten ja tarpeellisen logiikan piirtämistä varten.
 <br />
 ### Mitä olen oppinut:
 Opin tällä viikolla miten yhdistää vanhaa oppimaa (Mooc hiekkaranta) tehtävää ja nykyistä projektia.
