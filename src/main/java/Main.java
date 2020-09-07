@@ -47,10 +47,9 @@ public class Main extends Application {
         }));
 
 
-        //Drawing happens here.
         Canvas screen = new Canvas(leveys, korkeus);
         GraphicsContext piirturi = screen.getGraphicsContext2D();
-        //Drawing happens here.
+
 
 
         screen.setOnMouseClicked((event) -> {
@@ -94,12 +93,6 @@ public class Main extends Application {
                 }
             }
         });
-
-        /* Start BFS when mouse released.
-        screen.setOnMouseReleased((event) -> {
-            grid.find();
-        });
-        */
 
         new AnimationTimer() {
             long edellinen = 0;

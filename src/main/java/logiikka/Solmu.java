@@ -1,5 +1,7 @@
 package logiikka;
 
+import java.util.Objects;
+
 public class Solmu {
 
     private int x;
@@ -11,6 +13,7 @@ public class Solmu {
         this.y= y;
         this.tyyppi = tyyppi;
     }
+
 
     public int getX() {
         return x;
@@ -29,4 +32,18 @@ public class Solmu {
         return "Y:" + this.y + " X:" + this.x + " Tyyppi: " + this.tyyppi;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Solmu solmu = (Solmu) o;
+        return x == solmu.x &&
+                y == solmu.y &&
+                tyyppi == solmu.tyyppi;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y, tyyppi);
+    }
 }
