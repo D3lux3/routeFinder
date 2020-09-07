@@ -37,7 +37,7 @@ public class Lista <T> {
 
     public T hae(int indeksi) {
         if (indeksi < 0 || indeksi >= alkioita) {
-            throw new ArrayIndexOutOfBoundsException("Indeksi " + indeksi + " alueen [0, " + this.alkioita + "[ ulkopuolella.");
+            throw new ArrayIndexOutOfBoundsException("Indeksi " + indeksi + " on liian iso tai liian pieni");
         }
         return arvot[indeksi];
     }
