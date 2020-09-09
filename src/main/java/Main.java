@@ -1,3 +1,4 @@
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.control.Button;
@@ -13,17 +14,18 @@ import javafx.scene.Scene;
 import logiikka.Ruudukko;
 import logiikka.Tyyppi;
 
+import algoritmit.Bfs;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
         //Ikkunan koko
 
-        int korkeus = 300;
-        int leveys = 300;
+        int korkeus = 50;
+        int leveys = 50;
 
         final ToggleGroup ryhma = new ToggleGroup();
-
 
         RadioButton seina = new RadioButton("Seinä");
         seina.setToggleGroup(ryhma);
@@ -46,11 +48,8 @@ public class Main extends Application {
             ruudukko.nollaaTaulukko();
         }));
 
-
         Canvas screen = new Canvas(leveys, korkeus);
         GraphicsContext piirturi = screen.getGraphicsContext2D();
-
-
 
         screen.setOnMouseClicked((event) -> {
             double xSpot = event.getX();
@@ -72,8 +71,8 @@ public class Main extends Application {
             double xSpot = event.getX();
             double ySpot = event.getY();
 
-            for (int x = (int) xSpot - 2; x < (int)xSpot + 2; x++) {
-                for (int y = (int) ySpot - 2; y < (int)ySpot + 2; y++) {
+            for (int x = (int) xSpot - 2; x < (int) xSpot + 2; x++) {
+                for (int y = (int) ySpot - 2; y < (int) ySpot + 2; y++) {
 
                     if (ryhma.getSelectedToggle() == seina) {
                         ruudukko.lisaaTyyppi(x, y, Tyyppi.SEINA);
@@ -92,6 +91,13 @@ public class Main extends Application {
                     }
                 }
             }
+        });
+
+        //Etsi naapurit, kun hiiri päästetään irti
+        screen.setOnMouseReleased((event) -> {
+            ruudukko.etsiNaapurit();
+            Bfs bfs = new Bfs(ruudukko);
+            bfs.muodostaReitti();
         });
 
         new AnimationTimer() {
@@ -136,7 +142,6 @@ public class Main extends Application {
             }
         }.start();
 
-
         BorderPane borderPane = new BorderPane();
 
         HBox buttonMenu = new HBox();
@@ -153,6 +158,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-       launch();
+        launch();
     }
 }

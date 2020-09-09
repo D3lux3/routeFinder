@@ -24,7 +24,7 @@ public class Lista <T> {
             uus[i] = arvot[i];
         }
         this.arvot = uus;
-    }
+    }   
 
     public int koko() {
         return this.alkioita;
