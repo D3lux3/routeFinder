@@ -8,21 +8,42 @@ public class Solmu {
     private int y;
     private Tyyppi tyyppi;
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @param tyyppi
+     *
+     * Solmu olion konstruktori.
+     *
+     */
     public Solmu(int x, int y, Tyyppi tyyppi) {
         this.x = x;
         this.y= y;
         this.tyyppi = tyyppi;
     }
 
-
+    /**
+     * Palauttaa solmun X arvon.
+     * @return
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     *
+     * Palauttaa solmun Y arvon.
+     * @return
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     * Palauttaa solmun tyypin.
+     * @return
+     */
     public Tyyppi getTyyppi() {
         return tyyppi;
     }

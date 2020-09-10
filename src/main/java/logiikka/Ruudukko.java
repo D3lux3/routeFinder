@@ -13,6 +13,11 @@ public class Ruudukko {
 
     private Lista<Solmu>[][] vieruslista;
 
+    /**
+     * Ruudukon konstruktori.
+     * @param x
+     * @param y
+     */
     public Ruudukko(int x, int y) {
         this.x = x;
         this.y = y;
@@ -32,6 +37,9 @@ public class Ruudukko {
         nollaaTaulukko();
     }
 
+    /**
+     * Alustaa jokaisen ruudukon kohdan tyhjäksi.
+     */
     public void nollaaTaulukko() {
         for (int x = 0; x < ruudukko.length; x++) {
             for (int y = 0; y < ruudukko[0].length; y++) {
@@ -40,22 +48,44 @@ public class Ruudukko {
         }
     }
 
+    /**
+     * Palauttaa ruudukon X akselin koon.
+     * @return
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * Palauttaa ruudukon Y akselin koon.
+     * @return
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     * Palauttaa ruudukkoon asetetun maalin Solmu oliona.
+     * @return
+     */
     public Solmu getMaali() {
         return maali;
     }
 
+    /**
+     * Palauttaa ruudukkoon asetetun maalin Solmu oliona.
+     * @return
+     */
     public Solmu getAloitus() {
         return aloitus;
     }
 
+    /**
+     * Palauttaa Solmu olion tietystä kohtaa ruudukosta.
+     * @param x
+     * @param y
+     * @return
+     */
     public Solmu getSolmu(int x, int y) {
         if (tarkistaParametrit(x, y)) {
             return (ruudukko[x][y]);
@@ -63,26 +93,39 @@ public class Ruudukko {
         return null;
     }
 
+    /**
+     * Tarkistaa, että onko annetut parametrit lailliset.
+     * @param x
+     * @param y
+     * @return
+     */
     private boolean tarkistaParametrit(int x, int y) {
-        if (x <= this.x - 1 && x >= 0
+        if (x < this.x && x >= 0
                 && y <= this.y && y >= 0) {
             return true;
         }
         return false;
     }
 
+    /**
+     * Yhdistää kaksi solmua keskenään suuntaamattomaan verkkoon.
+     * @param eka
+     * @param toka
+     */
     private void yhdistaNaapurit(Solmu eka, Solmu toka) {
         this.vieruslista[eka.getX()][eka.getY()].lisaa(toka);
         this.vieruslista[toka.getX()][toka.getY()].lisaa(eka);
     }
 
-    //Heti kun käyttäjä päästää hiirestä irti, etsitään vieruslistaan kaverit
+    /**
+     * Etsii jokaiselle Solmu oliolle naapurit ja lisöö sen vieruslistaesitykseen. Metodi käynnistyy kun käyttäjä päästää hiirestä irti
+     */
     public void etsiNaapurit() {
-        for (int x = 1; x < this.x; x++) {
-            for (int y = 1; y < this.y; y++) {
-                
+        for (int x = 0; x < this.x; x++) {
+            for (int y = 0; y < this.y; y++) {
+
                 if (getTyyppi(x, y) != Tyyppi.SEINA) {
-                    
+
                     if (x - 1 > 0 && getTyyppi(x - 1, y) != Tyyppi.SEINA) {
                         yhdistaNaapurit(getSolmu(x, y), getSolmu(x - 1, y));
                     }
@@ -103,6 +146,9 @@ public class Ruudukko {
         }
     }
 
+    /**
+     * Poistaa algoritmin tuottaman polun pois ruudukolta.
+     */
     private void resetPolku() {
         for (int x = 0; x < this.x; x++) {
             for (int y = 0; y < this.y; y++) {
@@ -113,10 +159,21 @@ public class Ruudukko {
         }
     }
 
+    /**
+     * Palauttaa vieruslistan.
+     * @return
+     */
     public Lista[][] getVieruslista() {
         return this.vieruslista;
     }
 
+    /**
+     *
+     * Lisää annettuihin parametreihin Solmu-olion.
+     * @param x
+     * @param y
+     * @param tyyppi
+     */
     public void lisaaTyyppi(int x, int y, Tyyppi tyyppi) {
         if (tarkistaParametrit(x, y)) {
 
@@ -138,6 +195,12 @@ public class Ruudukko {
         }
     }
 
+    /**
+     * Palauttaa annetuista parametreistä Tyypin.
+     * @param x
+     * @param y
+     * @return
+     */
     public Tyyppi getTyyppi(int x, int y) {
         return ruudukko[x][y].getTyyppi();
     }

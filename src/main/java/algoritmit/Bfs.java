@@ -11,7 +11,7 @@ public class Bfs {
     private Ruudukko ruudukko;
     private int etaisyys[][];
     
-    public Bfs (Ruudukko ruudukko) {
+    public Bfs(Ruudukko ruudukko) {
         this.ruudukko = ruudukko;
         this.reitti = new Lista<>();
     }

@@ -18,12 +18,16 @@ import algoritmit.Bfs;
 
 public class Main extends Application {
 
+    /**
+     * Aloittaa graafisen käyttöliittymän käyttäjää varten.
+     * @param stage
+     */
     @Override
     public void start(Stage stage) {
         //Ikkunan koko
 
-        int korkeus = 50;
-        int leveys = 50;
+        int korkeus = 300;
+        int leveys = 300;
 
         final ToggleGroup ryhma = new ToggleGroup();
 
