@@ -19,7 +19,7 @@ public class Solmu {
      */
     public Solmu(int x, int y, Tyyppi tyyppi) {
         this.x = x;
-        this.y= y;
+        this.y = y;
         this.tyyppi = tyyppi;
     }
 
@@ -55,8 +55,12 @@ public class Solmu {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Solmu solmu = (Solmu) o;
         return x == solmu.x &&
                 y == solmu.y &&
