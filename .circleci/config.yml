@@ -10,6 +10,8 @@ jobs:
        - image: circleci/jdk8:0.1.1
 
 workflows:
+  jobs:
+    - build
   maven_test:
     jobs:
       - build
