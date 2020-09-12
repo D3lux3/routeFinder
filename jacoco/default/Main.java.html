@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">routeFinder</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">
+import javafx.animation.AnimationTimer;
+import javafx.application.Application;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.Scene;
+import logiikka.Ruudukko;
+import logiikka.Tyyppi;
+
+import algoritmit.Bfs;
+
+<span class="nc" id="L19">public class Main extends Application {</span>
+
+    /**
+     * Aloittaa graafisen käyttöliittymän käyttäjää varten.
+     * @param stage
+     */
+    @Override
+    public void start(Stage stage) {
+        //Ikkunan koko
+
+<span class="nc" id="L29">        int korkeus = 300;</span>
+<span class="nc" id="L30">        int leveys = 300;</span>
+
+<span class="nc" id="L32">        final ToggleGroup ryhma = new ToggleGroup();</span>
+
+<span class="nc" id="L34">        RadioButton seina = new RadioButton(&quot;Seinä&quot;);</span>
+<span class="nc" id="L35">        seina.setToggleGroup(ryhma);</span>
+<span class="nc" id="L36">        seina.setSelected(true);</span>
+
+<span class="nc" id="L38">        RadioButton tyhja = new RadioButton(&quot;Kumi&quot;);</span>
+<span class="nc" id="L39">        tyhja.setToggleGroup(ryhma);</span>
+
+<span class="nc" id="L41">        RadioButton aloitus = new RadioButton(&quot;Aloitus&quot;);</span>
+<span class="nc" id="L42">        aloitus.setToggleGroup(ryhma);</span>
+
+<span class="nc" id="L44">        RadioButton maali = new RadioButton(&quot;Maali&quot;);</span>
+<span class="nc" id="L45">        maali.setToggleGroup(ryhma);</span>
+
+<span class="nc" id="L47">        Ruudukko ruudukko = new Ruudukko(leveys, korkeus);</span>
+
+<span class="nc" id="L49">        Button resetNappi = new Button(&quot;Reset&quot;);</span>
+
+<span class="nc" id="L51">        resetNappi.setOnAction((event -&gt; {</span>
+<span class="nc" id="L52">            ruudukko.nollaaTaulukko();</span>
+<span class="nc" id="L53">        }));</span>
+
+<span class="nc" id="L55">        Canvas screen = new Canvas(leveys, korkeus);</span>
+<span class="nc" id="L56">        GraphicsContext piirturi = screen.getGraphicsContext2D();</span>
+
+<span class="nc" id="L58">        screen.setOnMouseClicked((event) -&gt; {</span>
+<span class="nc" id="L59">            double xSpot = event.getX();</span>
+<span class="nc" id="L60">            double ySpot = event.getY();</span>
+
+<span class="nc" id="L62">            int x = (int) xSpot;</span>
+<span class="nc" id="L63">            int y = (int) ySpot;</span>
+
+<span class="nc bnc" id="L65" title="All 2 branches missed.">            if (ryhma.getSelectedToggle() == aloitus) {</span>
+<span class="nc" id="L66">                ruudukko.lisaaTyyppi(x, y, Tyyppi.ALOITUS);</span>
+            }
+
+<span class="nc bnc" id="L69" title="All 2 branches missed.">            if (ryhma.getSelectedToggle() == maali) {</span>
+<span class="nc" id="L70">                ruudukko.lisaaTyyppi(x, y, Tyyppi.MAALI);</span>
+            }
+<span class="nc" id="L72">        });</span>
+
+<span class="nc" id="L74">        screen.setOnMouseDragged((event) -&gt; {</span>
+<span class="nc" id="L75">            double xSpot = event.getX();</span>
+<span class="nc" id="L76">            double ySpot = event.getY();</span>
+
+<span class="nc bnc" id="L78" title="All 2 branches missed.">            for (int x = (int) xSpot - 2; x &lt; (int) xSpot + 2; x++) {</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">                for (int y = (int) ySpot - 2; y &lt; (int) ySpot + 2; y++) {</span>
+
+<span class="nc bnc" id="L81" title="All 2 branches missed.">                    if (ryhma.getSelectedToggle() == seina) {</span>
+<span class="nc" id="L82">                        ruudukko.lisaaTyyppi(x, y, Tyyppi.SEINA);</span>
+                    }
+
+<span class="nc bnc" id="L85" title="All 2 branches missed.">                    if (ryhma.getSelectedToggle() == tyhja) {</span>
+<span class="nc" id="L86">                        ruudukko.lisaaTyyppi(x, y, Tyyppi.TYHJA);</span>
+                    }
+
+<span class="nc bnc" id="L89" title="All 2 branches missed.">                    if (ryhma.getSelectedToggle() == aloitus) {</span>
+<span class="nc" id="L90">                        ruudukko.lisaaTyyppi(x, y, Tyyppi.ALOITUS);</span>
+                    }
+
+<span class="nc bnc" id="L93" title="All 2 branches missed.">                    if (ryhma.getSelectedToggle() == maali) {</span>
+<span class="nc" id="L94">                        ruudukko.lisaaTyyppi(x, y, Tyyppi.MAALI);</span>
+                    }
+                }
+            }
+<span class="nc" id="L98">        });</span>
+
+        //Etsi naapurit, kun hiiri päästetään irti
+<span class="nc" id="L101">        screen.setOnMouseReleased((event) -&gt; {</span>
+<span class="nc" id="L102">            ruudukko.etsiNaapurit();</span>
+<span class="nc" id="L103">            Bfs bfs = new Bfs(ruudukko);</span>
+<span class="nc" id="L104">            bfs.muodostaReitti();</span>
+<span class="nc" id="L105">        });</span>
+
+<span class="nc" id="L107">        new AnimationTimer() {</span>
+<span class="nc" id="L108">            long edellinen = 0;</span>
+
+            @Override
+            public void handle(long nykyhetki) {
+<span class="nc bnc" id="L112" title="All 2 branches missed.">                if (nykyhetki - edellinen &lt; 100000000) {</span>
+<span class="nc" id="L113">                    return;</span>
+                }
+
+<span class="nc" id="L116">                piirturi.setFill(Color.BLACK);</span>
+<span class="nc" id="L117">                piirturi.fillRect(0, 0, leveys, korkeus);</span>
+
+<span class="nc bnc" id="L119" title="All 2 branches missed.">                for (int x = 0; x &lt; leveys; x++) {</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">                    for (int y = 0; y &lt; korkeus; y++) {</span>
+<span class="nc" id="L121">                        Tyyppi tyyppi = ruudukko.getTyyppi(x, y);</span>
+
+<span class="nc bnc" id="L123" title="All 4 branches missed.">                        if (tyyppi == Tyyppi.TYHJA || tyyppi == null) {</span>
+<span class="nc" id="L124">                            continue;</span>
+                        }
+
+<span class="nc bnc" id="L127" title="All 2 branches missed.">                        if (tyyppi == Tyyppi.SEINA) {</span>
+<span class="nc" id="L128">                            piirturi.setFill(Color.GRAY);</span>
+                        }
+
+<span class="nc bnc" id="L131" title="All 2 branches missed.">                        if (tyyppi == Tyyppi.ALOITUS) {</span>
+<span class="nc" id="L132">                            piirturi.setFill(Color.RED);</span>
+                        }
+
+<span class="nc bnc" id="L135" title="All 2 branches missed.">                        if (tyyppi == Tyyppi.MAALI) {</span>
+<span class="nc" id="L136">                            piirturi.setFill(Color.GREEN);</span>
+                        }
+
+<span class="nc bnc" id="L139" title="All 2 branches missed.">                        if (tyyppi == Tyyppi.REITTI) {</span>
+<span class="nc" id="L140">                            piirturi.setFill(Color.YELLOW);</span>
+                        }
+<span class="nc" id="L142">                        piirturi.fillRect(x, y, 1, 1);</span>
+                    }
+                }
+<span class="nc" id="L145">                this.edellinen = nykyhetki;</span>
+<span class="nc" id="L146">            }</span>
+<span class="nc" id="L147">        }.start();</span>
+
+<span class="nc" id="L149">        BorderPane borderPane = new BorderPane();</span>
+
+<span class="nc" id="L151">        HBox buttonMenu = new HBox();</span>
+<span class="nc" id="L152">        buttonMenu.getChildren().addAll(seina, tyhja, aloitus, maali, resetNappi);</span>
+
+<span class="nc" id="L154">        borderPane.setTop(buttonMenu);</span>
+<span class="nc" id="L155">        borderPane.setCenter(screen);</span>
+
+<span class="nc" id="L157">        Scene scene = new Scene(borderPane);</span>
+<span class="nc" id="L158">        stage.setScene(scene);</span>
+<span class="nc" id="L159">        stage.setResizable(false);</span>
+<span class="nc" id="L160">        stage.show();</span>
+
+<span class="nc" id="L162">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L165">        launch();</span>
+<span class="nc" id="L166">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
