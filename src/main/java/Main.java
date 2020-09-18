@@ -146,6 +146,7 @@ public class Main extends Application {
             }
         }.start();
 
+
         BorderPane borderPane = new BorderPane();
 
         HBox buttonMenu = new HBox();

@@ -2,11 +2,12 @@ package logiikka;
 
 import java.util.Objects;
 
-public class Solmu {
+public class Solmu implements Comparable<Solmu> {
 
     private int x;
     private int y;
     private Tyyppi tyyppi;
+    private int etaisyys;
 
     /**
      *
@@ -21,6 +22,7 @@ public class Solmu {
         this.x = x;
         this.y = y;
         this.tyyppi = tyyppi;
+        etaisyys = Integer.MAX_VALUE;
     }
 
     /**
@@ -29,6 +31,23 @@ public class Solmu {
      */
     public int getX() {
         return x;
+    }
+
+    /**
+     * Asettaa etaisyys muuttujalle arvon.
+     * @param etaisyys
+     */
+
+    public void setEtaisyys(int etaisyys){
+        this.etaisyys = etaisyys;
+    }
+
+    /**
+     * Palauttaa etaisyys muuttujan.
+     * @return
+     */
+    public int getEtaisyys() {
+        return this.etaisyys;
     }
 
     /**
@@ -51,6 +70,17 @@ public class Solmu {
     @Override
     public String toString() {
         return "Y:" + this.y + " X:" + this.x + " Tyyppi: " + this.tyyppi;
+    }
+
+    @Override
+    public int compareTo(Solmu toinen) {
+        if (etaisyys > toinen.getEtaisyys()) {
+            return 1;
+        } else if (etaisyys < toinen.getEtaisyys()) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 
     @Override
