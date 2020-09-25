@@ -8,6 +8,6 @@ public class Keko <T>{
 
     public Keko(){
         indeksi = 1;
-        arvot =
+
     }
 }

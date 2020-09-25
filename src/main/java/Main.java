@@ -1,4 +1,5 @@
 
+import algoritmit.Djikstra;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.control.Button;
@@ -48,8 +49,16 @@ public class Main extends Application {
 
         Button resetNappi = new Button("Reset");
 
+        Button etsiReitti = new Button("Etsi reitti");
+
         resetNappi.setOnAction((event -> {
             ruudukko.nollaaTaulukko();
+        }));
+
+        etsiReitti.setOnAction((event -> {
+            ruudukko.resetPolku();
+            ruudukko.muodostavieruslista();
+            ruudukko.algo();
         }));
 
         Canvas screen = new Canvas(leveys, korkeus);
@@ -97,11 +106,19 @@ public class Main extends Application {
             }
         });
 
+
+
         //Etsi naapurit, kun hiiri päästetään irti
         screen.setOnMouseReleased((event) -> {
-            ruudukko.etsiNaapurit();
-            Bfs bfs = new Bfs(ruudukko);
-            bfs.muodostaReitti();
+
+
+             /*
+            ruudukko.lisaaTyyppi(24,26, Tyyppi.ALOITUS);
+            ruudukko.lisaaTyyppi(27,24, Tyyppi.MAALI);
+            ruudukko.muodostavieruslista();
+            ruudukko.algo();
+            */
+
         });
 
         new AnimationTimer() {
@@ -150,7 +167,7 @@ public class Main extends Application {
         BorderPane borderPane = new BorderPane();
 
         HBox buttonMenu = new HBox();
-        buttonMenu.getChildren().addAll(seina, tyhja, aloitus, maali, resetNappi);
+        buttonMenu.getChildren().addAll(seina, tyhja, aloitus, maali, resetNappi, etsiReitti);
 
         borderPane.setTop(buttonMenu);
         borderPane.setCenter(screen);

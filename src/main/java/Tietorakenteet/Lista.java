@@ -14,6 +14,15 @@ public class Lista <T> {
     }
 
     /**
+     * Luo lista olion jolle voi antaa koon.
+     */
+    public Lista(int koko) {
+        this.arvot = (T[]) new Object[koko];
+        this.alkioita = 0;
+    }
+
+
+    /**
      * Lisää parametrina annetun arvon listaan.
      * @param arvo
      */
@@ -62,5 +71,23 @@ public class Lista <T> {
             throw new ArrayIndexOutOfBoundsException("Indeksi " + indeksi + " on liian iso tai liian pieni");
         }
         return arvot[indeksi];
+    }
+
+    /**
+     * Kääntää kaikki listan järjestyksen ympäri.
+     */
+    public void kaannaYmpari() {
+        T[] kaannetytArvot =(T[]) new Object[this.arvot.length];
+        int indeksi = this.alkioita - 1;
+        for (int i = 0; i <= this.arvot.length; i++) {
+            if(arvot[indeksi] != null) {
+                kaannetytArvot[i] = arvot[indeksi];
+            }
+            if (indeksi - 1 < 0) {
+             break;
+            }
+            indeksi--;
+        }
+        this.arvot = kaannetytArvot;
     }
 }

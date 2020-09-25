@@ -7,7 +7,8 @@ public class Solmu implements Comparable<Solmu> {
     private int x;
     private int y;
     private Tyyppi tyyppi;
-    private int etaisyys;
+    private double etaisyys;
+    private Solmu vanhempi;
 
     /**
      *
@@ -23,6 +24,23 @@ public class Solmu implements Comparable<Solmu> {
         this.y = y;
         this.tyyppi = tyyppi;
         etaisyys = Integer.MAX_VALUE;
+        this.vanhempi = null;
+    }
+
+    /**
+     * Asettaa solmulle toisen solmu olion vanhemmaksi.
+     * @param solmu
+     */
+    public void setVanhempi(Solmu solmu) {
+        this.vanhempi = solmu;
+    }
+
+    /**
+     * Palauttaa Solmun vanhemman
+     * @return
+     */
+    public Solmu getVanhempi() {
+        return this.vanhempi;
     }
 
     /**
@@ -38,7 +56,7 @@ public class Solmu implements Comparable<Solmu> {
      * @param etaisyys
      */
 
-    public void setEtaisyys(int etaisyys){
+    public void setEtaisyys(double etaisyys){
         this.etaisyys = etaisyys;
     }
 
@@ -46,7 +64,7 @@ public class Solmu implements Comparable<Solmu> {
      * Palauttaa etaisyys muuttujan.
      * @return
      */
-    public int getEtaisyys() {
+    public double getEtaisyys() {
         return this.etaisyys;
     }
 
@@ -69,7 +87,7 @@ public class Solmu implements Comparable<Solmu> {
 
     @Override
     public String toString() {
-        return "Y:" + this.y + " X:" + this.x + " Tyyppi: " + this.tyyppi;
+        return "X:" + this.x + " | " + "Y:" + this.y + " | " +"Tyyppi: " + this.tyyppi;
     }
 
     @Override

@@ -24,6 +24,18 @@ public class ListaTest {
         assertEquals(1, lista.koko());
     }
 
+
+    @Test
+    public void listanAlkioidenKaantaminen() {
+        lista.lisaa(1);
+        lista.lisaa(2);
+        lista.lisaa(3);
+        lista.lisaa(4);
+        lista.lisaa(5);
+        lista.kaannaYmpari();
+        assertEquals(5, (int) lista.hae(0));
+    }
+
     @Test
     public void hakeminenListastaOnnistuu() {
         lista.lisaa(0);

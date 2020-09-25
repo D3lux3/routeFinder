@@ -87,7 +87,7 @@ public class RuudukkoTest {
 
     @Test
     public void etsiiNaapurit() {
-        ruudukko.etsiNaapurit();
+        ruudukko.muodostavieruslista();
         Lista lista[][] = ruudukko.getVieruslista();
         assertNotEquals(lista[1][1].hae(0), null);
     }
