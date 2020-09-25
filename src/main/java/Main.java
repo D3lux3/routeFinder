@@ -58,7 +58,7 @@ public class Main extends Application {
         etsiReitti.setOnAction((event -> {
             ruudukko.resetPolku();
             ruudukko.muodostavieruslista();
-            ruudukko.algo();
+            Djikstra.algo(ruudukko);
         }));
 
         Canvas screen = new Canvas(leveys, korkeus);

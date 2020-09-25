@@ -48,6 +48,8 @@ public class Ruudukko {
                 ruudukko[x][y] = new Solmu(x, y, Tyyppi.TYHJA);
             }
         }
+        this.aloitus = null;
+        this.maali = null;
     }
 
     /**
@@ -176,6 +178,7 @@ public class Ruudukko {
                 }
             }
         }
+
     }
 
     public void piirraReitti(Lista<Solmu> reitti) {
@@ -243,7 +246,7 @@ public class Ruudukko {
         return ruudukko[x][y].getTyyppi();
     }
 
-
+/*
     public void algo() {
         if (this.aloitus != null && this.maali != null) {
 
@@ -290,6 +293,6 @@ public class Ruudukko {
 
         }
     }
-
+*/
 
 }
