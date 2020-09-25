@@ -10,4 +10,4 @@ Saamaan eri luokat toimimaan yhdessä.
 Pieni satunnainen ongelma etsiäessä polkua, jossa ikkuna jäätyy ja IDE valittaa memory erroria. Yritin myös perehtyä JPSsään, mutta en löytänyt selvää materiaalia, sen toteutusta varten.
 <br />
 ### Ensiviikon suunnitelma:
-Oma toteutus PriorityQueuesta ja ainakin alkeellinen JPS.
+Oma toteutus PriorityQueuesta ja mahdollisesti alkeellinen JPS. Myös ajon käyttää valmista .map tiedostoa, jotta ohjelmani algoritmin toimivuus voidaan todeta.
