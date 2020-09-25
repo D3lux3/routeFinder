@@ -12,7 +12,7 @@ public class Ruudukko {
 
     private Solmu aloitus;
     private Solmu maali;
-
+    private int reitinPituus;
     private Lista<Kaari>[][] vieruslista;
 
     /**
@@ -43,6 +43,7 @@ public class Ruudukko {
      * Alustaa jokaisen ruudukon kohdan tyhjäksi.
      */
     public void nollaaTaulukko() {
+        reitinPituus = 0;
         for (int x = 0; x < ruudukko.length; x++) {
             for (int y = 0; y < ruudukko[0].length; y++) {
                 ruudukko[x][y] = new Solmu(x, y, Tyyppi.TYHJA);
@@ -181,7 +182,12 @@ public class Ruudukko {
 
     }
 
+    public int getReitinPituus() {
+        return reitinPituus;
+    }
+
     public void piirraReitti(Lista<Solmu> reitti) {
+        this.reitinPituus = reitti.koko();
         for (int i = 0; i < reitti.koko(); i++) {
             Solmu solmu = reitti.hae(i);
             lisaaTyyppi(solmu.getX(), solmu.getY(), Tyyppi.REITTI);

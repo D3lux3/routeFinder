@@ -45,7 +45,7 @@ public class Djikstra {
         }
 
         Solmu solmu = ruudukko.getRuudukko()[ruudukko.getMaali().getX()][ruudukko.getMaali().getY()];
-        Lista <Solmu> reitti = new Lista<>(9000);
+        Lista <Solmu> reitti = new Lista<>();
         while (solmu != null) {
             reitti.lisaa(solmu);
             solmu = solmu.getVanhempi();

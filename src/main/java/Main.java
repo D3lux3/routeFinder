@@ -2,9 +2,15 @@
 import algoritmit.Djikstra;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -12,6 +18,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.Scene;
+import javafx.stage.StageStyle;
 import logiikka.Ruudukko;
 import logiikka.Tyyppi;
 
@@ -27,8 +34,8 @@ public class Main extends Application {
     public void start(Stage stage) {
         //Ikkunan koko
 
-        int korkeus = 300;
-        int leveys = 300;
+        int korkeus = 350;
+        int leveys = 350;
 
         final ToggleGroup ryhma = new ToggleGroup();
 
@@ -51,15 +58,8 @@ public class Main extends Application {
 
         Button etsiReitti = new Button("Etsi reitti");
 
-        resetNappi.setOnAction((event -> {
-            ruudukko.nollaaTaulukko();
-        }));
 
-        etsiReitti.setOnAction((event -> {
-            ruudukko.resetPolku();
-            ruudukko.muodostavieruslista();
-            Djikstra.algo(ruudukko);
-        }));
+
 
         Canvas screen = new Canvas(leveys, korkeus);
         GraphicsContext piirturi = screen.getGraphicsContext2D();
@@ -164,15 +164,30 @@ public class Main extends Application {
         }.start();
 
 
-        BorderPane borderPane = new BorderPane();
+        Label reitinPituus = new Label();
+        reitinPituus.setTextFill(Color.GREEN);
+        reitinPituus.setAlignment(Pos.CENTER);
+        etsiReitti.setOnAction((event -> {
+            ruudukko.resetPolku();
+            ruudukko.muodostavieruslista();
+            Djikstra.algo(ruudukko);
+            reitinPituus.setText("" + ruudukko.getReitinPituus());
+        }));
 
+        resetNappi.setOnAction((event -> {
+            reitinPituus.setText("");
+            ruudukko.nollaaTaulukko();
+        }));
+
+
+        BorderPane borderPane = new BorderPane();
         HBox buttonMenu = new HBox();
-        buttonMenu.getChildren().addAll(seina, tyhja, aloitus, maali, resetNappi, etsiReitti);
+        buttonMenu.getChildren().addAll(seina, tyhja, aloitus, maali, resetNappi, etsiReitti, reitinPituus);
 
         borderPane.setTop(buttonMenu);
         borderPane.setCenter(screen);
-
         Scene scene = new Scene(borderPane);
+        scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
