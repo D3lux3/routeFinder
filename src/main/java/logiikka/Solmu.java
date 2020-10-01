@@ -23,7 +23,7 @@ public class Solmu implements Comparable<Solmu> {
         this.x = x;
         this.y = y;
         this.tyyppi = tyyppi;
-        etaisyys = Integer.MAX_VALUE;
+        this.etaisyys = Integer.MAX_VALUE;
         this.vanhempi = null;
     }
 

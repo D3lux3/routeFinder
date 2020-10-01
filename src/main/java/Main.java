@@ -167,10 +167,12 @@ public class Main extends Application {
         Label reitinPituus = new Label();
         reitinPituus.setTextFill(Color.GREEN);
         reitinPituus.setAlignment(Pos.CENTER);
+        Djikstra djikstra = new Djikstra(ruudukko);
         etsiReitti.setOnAction((event -> {
             ruudukko.resetPolku();
             ruudukko.muodostavieruslista();
-            Djikstra.algo(ruudukko);
+            ruudukko.nollaaSolmujenVanhemmat();
+            djikstra.algo();
             reitinPituus.setText("" + ruudukko.getReitinPituus());
         }));
 

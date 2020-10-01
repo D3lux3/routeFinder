@@ -2,6 +2,7 @@ package logiikka;
 
 import Tietorakenteet.Lista;
 
+import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class Ruudukko {
@@ -187,10 +188,10 @@ public class Ruudukko {
     }
 
     public void piirraReitti(Lista<Solmu> reitti) {
-        this.reitinPituus = reitti.koko();
-        for (int i = 0; i < reitti.koko(); i++) {
-            Solmu solmu = reitti.hae(i);
-            lisaaTyyppi(solmu.getX(), solmu.getY(), Tyyppi.REITTI);
+        for (int i = 0; i <  reitti.koko(); i++) {
+            if (reitti.hae(i).getTyyppi() != Tyyppi.ALOITUS && reitti.hae(i).getTyyppi() != Tyyppi.MAALI) {
+                lisaaTyyppi(reitti.hae(i).getX(), reitti.hae(i).getY(), Tyyppi.REITTI);
+            }
         }
     }
 
@@ -241,6 +242,14 @@ public class Ruudukko {
     public void setSolmunEtaisyys(int x, int y, double etaisyys) {
         this.ruudukko[x][y].setEtaisyys(etaisyys);
     }
+
+    public void nollaaSolmujenVanhemmat() {
+        for (int x = 0; x < this.x; x++) {
+            for (int y = 0; y < this.y; y++) {
+                this.ruudukko[x][y].setVanhempi(null);
+            }
+        }
+     }
 
     /**
      * Palauttaa annetuista parametreistä Tyypin.

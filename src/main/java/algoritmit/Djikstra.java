@@ -4,12 +4,19 @@ import Tietorakenteet.Lista;
 import logiikka.Kaari;
 import logiikka.Ruudukko;
 import logiikka.Solmu;
+import logiikka.Tyyppi;
+
 import java.util.PriorityQueue;
 
 public class Djikstra {
 
+    private Ruudukko ruudukko;
 
-    public static void algo(Ruudukko ruudukko) {
+    public Djikstra (Ruudukko ruudukko) {
+        this.ruudukko = ruudukko;
+    }
+
+    public void algo() {
         if (ruudukko.getAloitus() != null && ruudukko.getMaali() != null) {
             PriorityQueue<Solmu> keko = new PriorityQueue<Solmu>();
 
@@ -23,7 +30,7 @@ public class Djikstra {
 
             //Alku pisteen etaisyyden asetus
             ruudukko.setSolmunEtaisyys(ruudukko.getAloitus().getX(), ruudukko.getAloitus().getY(), 0);
-            keko.add(ruudukko.getRuudukko()[ruudukko.getAloitus().getX()][ruudukko.getAloitus().getY()]);
+            keko.add(ruudukko.getSolmu(ruudukko.getAloitus().getX(),ruudukko.getAloitus().getY()));
 
             while (!keko.isEmpty()) {
                 Solmu seuraava = keko.poll();
@@ -35,7 +42,9 @@ public class Djikstra {
                         Solmu loppu = kaari.loppu;
 
                         if (loppu.getEtaisyys() > seuraava.getEtaisyys() + kaari.paino) {
-                            ruudukko.setSolmunVanhempi(loppu.getX(), loppu.getY(), seuraava);
+                            if (!kasitelty[loppu.getX()][loppu.getY()]) {
+                                ruudukko.setSolmunVanhempi(loppu.getX(), loppu.getY(), seuraava);
+                            }
                             ruudukko.setSolmunEtaisyys(loppu.getX(),loppu.getY(), seuraava.getEtaisyys() + kaari.paino);
                             keko.add(ruudukko.getRuudukko()[loppu.getX()][loppu.getY()]);
                         }
@@ -43,16 +52,21 @@ public class Djikstra {
                 }
             }
         }
+        muodostaReitti();
+    }
 
-        Solmu solmu = ruudukko.getRuudukko()[ruudukko.getMaali().getX()][ruudukko.getMaali().getY()];
+
+    private void muodostaReitti() {
+        Solmu solmu = ruudukko.getSolmu(ruudukko.getMaali().getX(), ruudukko.getMaali().getY());
         Lista <Solmu> reitti = new Lista<>();
+
         while (solmu != null) {
+            System.out.println(solmu + " vanhempi -> " + solmu.getVanhempi());
             reitti.lisaa(solmu);
             solmu = solmu.getVanhempi();
         }
         ruudukko.piirraReitti(reitti);
     }
-
 
 
 }
