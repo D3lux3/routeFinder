@@ -12,4 +12,4 @@
 <br />
 
 ### Screenshots :camera:
-![alt text](https://github.com/D3lux3/routeFinder/blob/master/documentation/kuva2.jpg "Screenshot of GUI")
+![alt text](https://github.com/D3lux3/routeFinder/blob/master/documentation/kuva3.jpg "Screenshot of GUI")
