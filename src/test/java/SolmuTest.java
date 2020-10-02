@@ -35,6 +35,6 @@ public class SolmuTest {
 
     @Test
     public void toStringOikea() {
-        assertEquals("Y:0 X:0 Tyyppi: ALOITUS", solmu.toString());
+        assertEquals("X:0 | Y:0 | Tyyppi: ALOITUS", solmu.toString());
     }
 }
