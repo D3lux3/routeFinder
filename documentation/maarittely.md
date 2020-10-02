@@ -4,7 +4,7 @@
 #### Projektin nimi: routeFinder
 
 Työni on visuaalinen reitinhakija. :rocket:
-Työni tulee vertailemaan **Fringe** ja **Djikstra** algoritmejä keskenään.
+Työni tulee vertailemaan **Fringe search** ja **Djikstra** algoritmejä keskenään.
 <br />
 Ohjelma tuotetaan Javalla ja JavaFXää käyttäen.
 <br /> 
@@ -21,3 +21,5 @@ Käyttäjällä on mahdollisuus valita aloituspiste ja maali. Näiden pisteiden 
 
 Lähteet;
 https://www.cs.helsinki.fi/u/ahslaaks/tirakirja/
+https://en.wikipedia.org/wiki/Fringe_search
+https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf
