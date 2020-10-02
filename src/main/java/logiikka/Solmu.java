@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Solmu implements Comparable<Solmu> {
 
+
     private int x;
     private int y;
     private Tyyppi tyyppi;

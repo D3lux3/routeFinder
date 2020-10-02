@@ -1,16 +1,12 @@
 
 import algoritmit.Djikstra;
+import algoritmit.Fringe;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
+import javafx.scene.control.*;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -18,11 +14,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.Scene;
-import javafx.stage.StageStyle;
 import logiikka.Ruudukko;
 import logiikka.Tyyppi;
-
-import algoritmit.Bfs;
 
 public class Main extends Application {
 
@@ -94,14 +87,6 @@ public class Main extends Application {
                     if (ryhma.getSelectedToggle() == tyhja) {
                         ruudukko.lisaaTyyppi(x, y, Tyyppi.TYHJA);
                     }
-
-                    if (ryhma.getSelectedToggle() == aloitus) {
-                        ruudukko.lisaaTyyppi(x, y, Tyyppi.ALOITUS);
-                    }
-
-                    if (ryhma.getSelectedToggle() == maali) {
-                        ruudukko.lisaaTyyppi(x, y, Tyyppi.MAALI);
-                    }
                 }
             }
         });
@@ -153,9 +138,13 @@ public class Main extends Application {
                             piirturi.setFill(Color.GREEN);
                         }
 
-                        if (tyyppi == Tyyppi.REITTI) {
+                        if (tyyppi == Tyyppi.DIJKSTRA) {
                             piirturi.setFill(Color.YELLOW);
                         }
+                        if (tyyppi == Tyyppi.FRINGE) {
+                            piirturi.setFill(Color.CYAN);
+                        }
+
                         piirturi.fillRect(x, y, 1, 1);
                     }
                 }
@@ -164,28 +153,60 @@ public class Main extends Application {
         }.start();
 
 
-        Label reitinPituus = new Label();
-        reitinPituus.setTextFill(Color.GREEN);
-        reitinPituus.setAlignment(Pos.CENTER);
+        Label dijkstraAika = new Label("Djikstra");
+        Label fringeAika = new Label("Fringe");
+
+
+        //Algoritmit
         Djikstra djikstra = new Djikstra(ruudukko);
+        Fringe fringe = new Fringe(ruudukko);
+
+        //Etsireittiä painamalla tapahtuu reitin muodostaminen
         etsiReitti.setOnAction((event -> {
-            ruudukko.resetPolku();
-            ruudukko.muodostavieruslista();
-            ruudukko.nollaaSolmujenVanhemmat();
-            djikstra.algo();
-            reitinPituus.setText("" + ruudukko.getReitinPituus());
+            if (ruudukko.getAloitus() == null && ruudukko.getMaali() == null) {
+                new Alert(Alert.AlertType.ERROR, "Aseta aloituspiste ja maali!").show();
+            } else if(ruudukko.getAloitus() == null)  {
+                new Alert(Alert.AlertType.ERROR, "Aseta aloituspiste!").show();
+            } else if (ruudukko.getMaali() == null) {
+                new Alert(Alert.AlertType.ERROR, "Aseta maali!").show();
+            } else {
+                ruudukko.resetPolku();
+                ruudukko.muodostavieruslista();
+                ruudukko.nollaaSolmujenVanhemmat();
+                long alku = System.nanoTime();
+                fringe.algo();
+                long loppu = System.nanoTime();
+                ruudukko.muodostavieruslista();
+                long alku2 = System.nanoTime();
+                djikstra.algo();
+                long loppu2 = System.nanoTime();
+
+                fringeAika.setText("Fringe: "+((loppu-alku)/1e9)+" s");
+                dijkstraAika.setText("Djikstra: "+((loppu2-alku2)/1e9)+" s");
+            }
         }));
 
+
+
+
         resetNappi.setOnAction((event -> {
-            reitinPituus.setText("");
             ruudukko.nollaaTaulukko();
         }));
 
 
+        Rectangle dijkstraVari = new Rectangle(20, 20);
+        Rectangle fridgeVari = new Rectangle(20, 20);
+
+        dijkstraVari.setFill(Color.YELLOW);
+        fridgeVari.setFill(Color.CYAN);
         BorderPane borderPane = new BorderPane();
         HBox buttonMenu = new HBox();
-        buttonMenu.getChildren().addAll(seina, tyhja, aloitus, maali, resetNappi, etsiReitti, reitinPituus);
+        buttonMenu.getChildren().addAll(seina, tyhja, aloitus, maali, resetNappi, etsiReitti);
 
+        HBox infoPalkki = new HBox();
+        infoPalkki.setSpacing(15);
+        infoPalkki.getChildren().addAll(dijkstraVari, dijkstraAika, fridgeVari, fringeAika);
+        borderPane.setBottom(infoPalkki);
         borderPane.setTop(buttonMenu);
         borderPane.setCenter(screen);
         Scene scene = new Scene(borderPane);

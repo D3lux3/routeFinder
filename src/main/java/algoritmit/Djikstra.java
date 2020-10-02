@@ -61,11 +61,10 @@ public class Djikstra {
         Lista <Solmu> reitti = new Lista<>();
 
         while (solmu != null) {
-            System.out.println(solmu + " vanhempi -> " + solmu.getVanhempi());
             reitti.lisaa(solmu);
             solmu = solmu.getVanhempi();
         }
-        ruudukko.piirraReitti(reitti);
+        ruudukko.piirraReitti(reitti, Tyyppi.DIJKSTRA);
     }
 
 
