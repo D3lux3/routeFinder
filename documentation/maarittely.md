@@ -4,15 +4,14 @@
 #### Projektin nimi: routeFinder
 
 Työni on visuaalinen reitinhakija. :rocket:
-Työni tulee vertailemaan **leveyshakua**, **syvyyshakua** ja **Dijkstran** algoritmejä keskenään.
+Työni tulee vertailemaan **Fringe** ja **Djikstra** algoritmejä keskenään.
 <br />
 Ohjelma tuotetaan Javalla ja JavaFXää käyttäen.
 <br /> 
 Ohjelma tulee olemaan suomen kielellä.
 
 Tavoittelen seuraavia aikavaatimuksia:
-* Syvyyshaku: _`O(n + m)`_
-* Leveyshaku: _`O(n + m)`_
+* Fringe: _`???`_
 * Dijkstra:   _`O(n + m log m)`_
 
 <br />
