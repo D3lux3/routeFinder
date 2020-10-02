@@ -62,6 +62,54 @@ public class Lista <T> {
     }
 
     /**
+     * Tarkistaa, että onko annettu alkio listalla. Jos on palautetaan true jos ei, niin palautetaan false.
+     * @param arvo
+     * @return
+     */
+    public boolean sisaltaako(T arvo) {
+        return arvonIndeksi(arvo) >= 0;
+    }
+
+
+    /**
+     * Siirtää kaikkia arvoja vasemmalle listalla.
+     * @param indeksistaLahtien
+     */
+    private void siirraVasemmalle(int indeksistaLahtien) {
+        for (int i = indeksistaLahtien; i < this.alkioita - 1; i++) {
+            this.arvot[i] = this.arvot[i + 1];
+        }
+    }
+
+    /**
+     * Poistaa annetun arvon listalta.
+     * @param arvo
+     */
+    public void poista(T arvo) {
+        int arvonIndeksi = arvonIndeksi(arvo);
+        if (arvonIndeksi < 0) {
+            return;
+        }
+
+        siirraVasemmalle(arvonIndeksi);
+        this.alkioita--;
+    }
+
+    /**
+     * Palauttaa annetun alkion indeksin listalta.
+     * @param arvo
+     * @return
+     */
+    private int arvonIndeksi(T arvo) {
+        for (int i = 0; i < this.alkioita; i++) {
+            if (this.arvot[i].equals(arvo)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
      * Hakee ja palauttaa halutusta indeksistä alkion.
      * @param indeksi
      * @return
@@ -74,7 +122,7 @@ public class Lista <T> {
     }
 
     /**
-     * Kääntää kaikki listan järjestyksen ympäri.
+     * Kääntää kaikki listan alkiot ympäri.
      */
     public void kaannaYmpari() {
         T[] kaannetytArvot =(T[]) new Object[this.arvot.length];
