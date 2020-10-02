@@ -20,6 +20,9 @@ Käyttäjällä on mahdollisuus valita aloituspiste ja maali. Näiden pisteiden 
 
 
 Lähteet;
+<br/>
 https://www.cs.helsinki.fi/u/ahslaaks/tirakirja/
+<br/>
 https://en.wikipedia.org/wiki/Fringe_search
+<br/>
 https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf
