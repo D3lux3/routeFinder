@@ -1,4 +1,4 @@
-# routeFinder :rocket: :mag:
+# routeFinder :mag:
 
 
 ### Dokumentaatio :memo:
