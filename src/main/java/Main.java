@@ -153,8 +153,8 @@ public class Main extends Application {
         }.start();
 
 
-        Label dijkstraAika = new Label("Djikstra");
-        Label fringeAika = new Label("Fringe");
+        Label dijkstraAika = new Label("<--- Djikstra");
+        Label fringeAika = new Label("<--- Fringe");
 
 
         //Algoritmit
