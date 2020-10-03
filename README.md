@@ -11,5 +11,11 @@
 
 <br />
 
+### Maven komennot :camera:
+
+JavaDoc = ```mvn javadoc:javadoc```
+Jacoco = ```mvn test jacoco:report```
+Checkstyle = ```mvn jxr:jxr checkstyle:checkstyle```
+
 ### Screenshots :camera:
 ![alt text](https://github.com/D3lux3/routeFinder/blob/master/documentation/kuva3.jpg "Screenshot of GUI")
