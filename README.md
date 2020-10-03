@@ -14,7 +14,9 @@
 ### Maven komennot :camera:
 
 JavaDoc = ```mvn javadoc:javadoc```
+<br />
 Jacoco = ```mvn test jacoco:report```
+<br />
 Checkstyle = ```mvn jxr:jxr checkstyle:checkstyle```
 
 ### Screenshots :camera:
