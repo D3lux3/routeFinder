@@ -11,7 +11,7 @@
 
 <br />
 
-### Maven komennot :camera:
+### Maven komennot :pencil2:
 
 JavaDoc = ```mvn javadoc:javadoc```
 <br />
