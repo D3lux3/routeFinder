@@ -47,6 +47,12 @@ public class ListaTest {
     }
 
     @Test
+    public void listastaPoistaminenOnnistuu() {
+        lista.lisaa(0);
+        lista.poista(0);
+        assertEquals(0, lista.koko());
+    }
+    @Test
     public void listanAlustusToimii() {
         lista.lisaa(0);
         lista.lisaa(2);

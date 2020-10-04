@@ -100,8 +100,6 @@ public class Fringe {
 
         }
 
-
-
         if (loydetty) {
             cache2[ruudukko.getJarjestysnumero(ruudukko.getAloitus().getX(), ruudukko.getAloitus().getY())] = null;
             muodostaReitti(ruudukko.getMaali());

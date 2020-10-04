@@ -3,9 +3,7 @@ import algoritmit.Djikstra;
 import algoritmit.Fringe;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
@@ -91,20 +89,6 @@ public class Main extends Application {
             }
         });
 
-
-
-        //Etsi naapurit, kun hiiri päästetään irti
-        screen.setOnMouseReleased((event) -> {
-
-
-             /*
-            ruudukko.lisaaTyyppi(24,26, Tyyppi.ALOITUS);
-            ruudukko.lisaaTyyppi(27,24, Tyyppi.MAALI);
-            ruudukko.muodostavieruslista();
-            ruudukko.algo();
-            */
-
-        });
 
         new AnimationTimer() {
             long edellinen = 0;

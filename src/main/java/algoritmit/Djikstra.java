@@ -1,12 +1,12 @@
 package algoritmit;
 
+import Tietorakenteet.Keko;
 import Tietorakenteet.Lista;
 import logiikka.Kaari;
 import logiikka.Ruudukko;
 import logiikka.Solmu;
 import logiikka.Tyyppi;
 
-import java.util.PriorityQueue;
 
 public class Djikstra {
 
@@ -18,8 +18,7 @@ public class Djikstra {
 
     public void algo() {
         if (ruudukko.getAloitus() != null && ruudukko.getMaali() != null) {
-            PriorityQueue<Solmu> keko = new PriorityQueue<Solmu>();
-
+            Keko keko = new Keko();
             boolean kasitelty[][] = new boolean[ruudukko.getX()][ruudukko.getY()];
             for (int x = 0; x < ruudukko.getX(); x++) {
                 for (int y = 0; y < ruudukko.getY(); y++) {
@@ -30,10 +29,10 @@ public class Djikstra {
 
             //Alku pisteen etaisyyden asetus
             ruudukko.setSolmunEtaisyys(ruudukko.getAloitus().getX(), ruudukko.getAloitus().getY(), 0);
-            keko.add(ruudukko.getSolmu(ruudukko.getAloitus().getX(),ruudukko.getAloitus().getY()));
+            keko.lisaa(ruudukko.getSolmu(ruudukko.getAloitus().getX(),ruudukko.getAloitus().getY()));
 
-            while (!keko.isEmpty()) {
-                Solmu seuraava = keko.poll();
+            while (!keko.onkoTyhja()) {
+                Solmu seuraava = keko.poistaMin();
 
                 if (!kasitelty[seuraava.getX()][seuraava.getY()]) {
                     kasitelty[seuraava.getX()][seuraava.getY()] = true;
@@ -46,7 +45,7 @@ public class Djikstra {
                                 ruudukko.setSolmunVanhempi(loppu.getX(), loppu.getY(), seuraava);
                             }
                             ruudukko.setSolmunEtaisyys(loppu.getX(),loppu.getY(), seuraava.getEtaisyys() + kaari.paino);
-                            keko.add(ruudukko.getRuudukko()[loppu.getX()][loppu.getY()]);
+                            keko.lisaa(ruudukko.getRuudukko()[loppu.getX()][loppu.getY()]);
                         }
                     }
                 }
