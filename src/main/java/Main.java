@@ -158,7 +158,7 @@ public class Main extends Application {
                 ruudukko.muodostavieruslista();
                 ruudukko.nollaaSolmujenVanhemmat();
                 long alku = System.nanoTime();
-                fringe.algo();
+                fringe.etsiReitti();
                 long loppu = System.nanoTime();
                 ruudukko.muodostavieruslista();
                 long alku2 = System.nanoTime();

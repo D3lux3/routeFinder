@@ -34,7 +34,6 @@ public class Keko{
         indeksi++;
         solmut[indeksi] = solmu;
         int p = indeksi;
-        //Jos ei toimi, nii se on tästä comparesta kiinni. Käännnä ympäri jos ei muuta
         while (p > 1 && solmu.compareTo(solmut[vanhempi(p)]) < 1) {
             Solmu temp = solmut[vanhempi(p)];
             solmut[vanhempi(p)] = solmut[p];
@@ -66,7 +65,6 @@ public class Keko{
         } else if (vasen(p) == indeksi) {
              pienempiLapsi = vasen(p);
         } else {
-            //Jos ei toimi, nii se on tästä comparesta kiinni. Käännnä ympäri jos ei muuta
             if (solmut[vasen(p)].compareTo(solmut[oikea(p)]) < 1) {
                 pienempiLapsi = vasen(p);
             } else {

@@ -17,7 +17,7 @@ public class Fringe {
         this.ruudukko = ruudukko;
     }
 
-    public void algo() {
+    public void etsiReitti() {
 
         this.cache1 = new double[ruudukko.getX()*ruudukko.getY() + 1];
         this.cache2 = new Solmu[ruudukko.getX()*ruudukko.getY() + 1];
@@ -25,24 +25,24 @@ public class Fringe {
 
 
 
-        Lista<Solmu> now = new Lista<>();
-        Lista<Solmu> later = new Lista<>();
+        Lista<Solmu> nykyinen = new Lista<>();
+        Lista<Solmu> tuleva = new Lista<>();
 
         double fRaja = ruudukko.pisteidenHeuristinen(ruudukko.getAloitus().getX(), ruudukko.getAloitus().getY(), ruudukko.getMaali().getX(), ruudukko.getMaali().getY());
         boolean loydetty = false;
 
 
-        now.lisaa(ruudukko.getAloitus());
+        nykyinen.lisaa(ruudukko.getAloitus());
 
         cache1[ruudukko.getJarjestysnumero(ruudukko.getAloitus().getX(), ruudukko.getAloitus().getY())] = 0;
         cache2[ruudukko.getJarjestysnumero(ruudukko.getAloitus().getX(), ruudukko.getAloitus().getY())] = null;
 
 
-        while (loydetty == false && now.koko() != 0) {
+        while (loydetty == false && nykyinen.koko() != 0) {
             double fmin = Integer.MAX_VALUE;
 
-            for (int i = 0; i < now.koko(); i++) {
-                Solmu solmu = now.hae(i);
+            for (int i = 0; i < nykyinen.koko(); i++) {
+                Solmu solmu = nykyinen.hae(i);
                 double gAskeleet = cache1[ruudukko.getJarjestysnumero(solmu.getX(), solmu.getY())];
 
 
@@ -77,22 +77,22 @@ public class Fringe {
                         }
                     }
 
-                    if (now.sisaltaako(lapsi)) {
-                        now.poista(lapsi);
+                    if (nykyinen.sisaltaako(lapsi)) {
+                        nykyinen.poista(lapsi);
                     }
 
-                    later.lisaa(lapsi);
+                    tuleva.lisaa(lapsi);
 
                     cache1[ruudukko.getJarjestysnumero(lapsi.getX(),lapsi.getY())] = gLapsi;
                     cache2[ruudukko.getJarjestysnumero(lapsi.getX(),lapsi.getY())] = solmu;
 
                 }
-                now.poista(solmu);
+                nykyinen.poista(solmu);
 
-                for (int j  = 0; j < later.koko(); j++) {
-                    now.lisaa(later.hae(j));
+                for (int j  = 0; j < tuleva.koko(); j++) {
+                    nykyinen.lisaa(tuleva.hae(j));
                 }
-                later = new Lista();
+                tuleva = new Lista();
 
             }
 
