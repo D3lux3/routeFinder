@@ -11,7 +11,7 @@ Ohjelma tuotetaan Javalla ja JavaFXää käyttäen.
 Ohjelma tulee olemaan suomen kielellä.
 
 Tavoittelen seuraavia aikavaatimuksia:
-* Fringe: _`???`_
+* Fringe: _`O(n)`_
 * Dijkstra:   _`O(n + m log m)`_
 
 <br />
