@@ -17,6 +17,7 @@ import logiikka.Tyyppi;
 
 public class Main extends Application {
 
+    
     /**
      * Aloittaa graafisen käyttöliittymän käyttäjää varten.
      * @param stage
@@ -162,7 +163,7 @@ public class Main extends Application {
                 long loppu = System.nanoTime();
                 ruudukko.muodostavieruslista();
                 long alku2 = System.nanoTime();
-                djikstra.algo();
+                djikstra.etsiReitti();
                 long loppu2 = System.nanoTime();
 
                 fringeAika.setText("Fringe: "+((loppu-alku)/1e9)+" s");
@@ -170,13 +171,9 @@ public class Main extends Application {
             }
         }));
 
-
-
-
         resetNappi.setOnAction((event -> {
             ruudukko.nollaaTaulukko();
         }));
-
 
         Rectangle dijkstraVari = new Rectangle(20, 20);
         Rectangle fridgeVari = new Rectangle(20, 20);

@@ -329,4 +329,5 @@ public class Ruudukko {
 
         return Math.sqrt(2) * diakonaaliset + suorat;
     }
+
 }

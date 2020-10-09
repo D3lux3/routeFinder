@@ -116,6 +116,10 @@ public class Fringe {
         reitti.lisaa(solmu);
     }
 
+    public Lista<Solmu> palautaReittiListana() {
+        return reitti;
+    }
+
 
 
 }

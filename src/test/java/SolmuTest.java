@@ -24,13 +24,13 @@ public class SolmuTest {
 
     @Test
     public void tyypinHaku() {
-        assertEquals(solmu.getTyyppi(), Tyyppi.ALOITUS);
+        assertEquals(Tyyppi.ALOITUS, solmu.getTyyppi());
     }
 
     @Test
     public void koordinaatitOikein() {
-        assertEquals(solmu.getX(), 0);
-        assertEquals(solmu.getY(), 0);
+        assertEquals(0, solmu.getX());
+        assertEquals(0, solmu.getY());
     }
 
     @Test

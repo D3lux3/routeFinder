@@ -16,7 +16,10 @@ public class Djikstra {
         this.ruudukko = ruudukko;
     }
 
-    public void algo() {
+    /**
+     * Etsii nopeimman reitin oliomuuttuja Ruudukolle
+     */
+    public void etsiReitti() {
         if (ruudukko.getAloitus() != null && ruudukko.getMaali() != null) {
             Keko keko = new Keko();
             boolean kasitelty[][] = new boolean[ruudukko.getX()][ruudukko.getY()];
@@ -57,13 +60,27 @@ public class Djikstra {
 
     private void muodostaReitti() {
         Solmu solmu = ruudukko.getSolmu(ruudukko.getMaali().getX(), ruudukko.getMaali().getY());
-        Lista <Solmu> reitti = new Lista<>();
+        Lista<Solmu> reitti = new Lista<>();
 
         while (solmu != null) {
             reitti.lisaa(solmu);
             solmu = solmu.getVanhempi();
         }
         ruudukko.piirraReitti(reitti, Tyyppi.DIJKSTRA);
+    }
+
+    /**
+     * Metodi testejä varten.
+     * @return
+     */
+    public Lista<Solmu> palautaReittiListana() {
+        Solmu solmu = ruudukko.getSolmu(ruudukko.getMaali().getX(), ruudukko.getMaali().getY());
+        Lista <Solmu> reitti = new Lista<>();
+        while (solmu != null) {
+            reitti.lisaa(solmu);
+            solmu = solmu.getVanhempi();
+        }
+        return reitti;
     }
 
 
