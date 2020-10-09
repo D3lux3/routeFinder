@@ -17,7 +17,7 @@ import logiikka.Tyyppi;
 
 public class Main extends Application {
 
-    
+
     /**
      * Aloittaa graafisen käyttöliittymän käyttäjää varten.
      * @param stage
