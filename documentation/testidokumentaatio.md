@@ -1,10 +1,10 @@
 # Testausdokumentti
 
 ### Testattavat luokat
-*Dijkstra
-*Fringe
-*Lista
-*Ruudukko
-*Solmu
-*Keko
+* Dijkstra
+* Fringe
+* Lista
+* Ruudukko
+* Solmu
+* Keko
 
