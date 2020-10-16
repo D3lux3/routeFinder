@@ -1,6 +1,6 @@
 package Tietorakenteet;
 
-public class Lista <T> {
+public class Lista<T> {
 
     private  T[] arvot;
     private int alkioita;
@@ -125,14 +125,14 @@ public class Lista <T> {
      * Kääntää kaikki listan alkiot ympäri.
      */
     public void kaannaYmpari() {
-        T[] kaannetytArvot =(T[]) new Object[this.arvot.length];
+        T[] kaannetytArvot = (T[]) new Object[this.arvot.length];
         int indeksi = this.alkioita - 1;
         for (int i = 0; i <= this.arvot.length; i++) {
-            if(arvot[indeksi] != null) {
+            if (arvot[indeksi] != null) {
                 kaannetytArvot[i] = arvot[indeksi];
             }
             if (indeksi - 1 < 0) {
-             break;
+                break;
             }
             indeksi--;
         }

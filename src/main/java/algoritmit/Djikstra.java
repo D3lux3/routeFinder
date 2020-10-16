@@ -12,7 +12,7 @@ public class Djikstra {
 
     private Ruudukko ruudukko;
 
-    public Djikstra (Ruudukko ruudukko) {
+    public Djikstra(Ruudukko ruudukko) {
         this.ruudukko = ruudukko;
     }
 
@@ -25,14 +25,14 @@ public class Djikstra {
             boolean kasitelty[][] = new boolean[ruudukko.getX()][ruudukko.getY()];
             for (int x = 0; x < ruudukko.getX(); x++) {
                 for (int y = 0; y < ruudukko.getY(); y++) {
-                    ruudukko.setSolmunEtaisyys(x,y, Integer.MAX_VALUE);
+                    ruudukko.setSolmunEtaisyys(x, y, Integer.MAX_VALUE);
                     kasitelty[x][y] = false;
                 }
             }
 
             //Alku pisteen etaisyyden asetus
             ruudukko.setSolmunEtaisyys(ruudukko.getAloitus().getX(), ruudukko.getAloitus().getY(), 0);
-            keko.lisaa(ruudukko.getSolmu(ruudukko.getAloitus().getX(),ruudukko.getAloitus().getY()));
+            keko.lisaa(ruudukko.getSolmu(ruudukko.getAloitus().getX(), ruudukko.getAloitus().getY()));
 
             while (!keko.onkoTyhja()) {
                 Solmu seuraava = keko.poistaMin();
@@ -47,7 +47,7 @@ public class Djikstra {
                             if (!kasitelty[loppu.getX()][loppu.getY()]) {
                                 ruudukko.setSolmunVanhempi(loppu.getX(), loppu.getY(), seuraava);
                             }
-                            ruudukko.setSolmunEtaisyys(loppu.getX(),loppu.getY(), seuraava.getEtaisyys() + kaari.paino);
+                            ruudukko.setSolmunEtaisyys(loppu.getX(), loppu.getY(), seuraava.getEtaisyys() + kaari.paino);
                             keko.lisaa(ruudukko.getRuudukko()[loppu.getX()][loppu.getY()]);
                         }
                     }
@@ -75,7 +75,7 @@ public class Djikstra {
      */
     public Lista<Solmu> palautaReittiListana() {
         Solmu solmu = ruudukko.getSolmu(ruudukko.getMaali().getX(), ruudukko.getMaali().getY());
-        Lista <Solmu> reitti = new Lista<>();
+        Lista<Solmu> reitti = new Lista<>();
         while (solmu != null) {
             reitti.lisaa(solmu);
             solmu = solmu.getVanhempi();

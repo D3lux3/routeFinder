@@ -57,7 +57,7 @@ public class Solmu implements Comparable<Solmu> {
      * @param etaisyys
      */
 
-    public void setEtaisyys(double etaisyys){
+    public void setEtaisyys(double etaisyys) {
         this.etaisyys = etaisyys;
     }
 
@@ -88,7 +88,7 @@ public class Solmu implements Comparable<Solmu> {
 
     @Override
     public String toString() {
-        return "X:" + this.x + " | " + "Y:" + this.y + " | " +"Tyyppi: " + this.tyyppi;
+        return "X:" + this.x + " | " + "Y:" + this.y + " | " + "Tyyppi: " + this.tyyppi;
     }
 
     @Override

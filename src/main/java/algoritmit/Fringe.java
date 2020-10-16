@@ -5,6 +5,7 @@ import logiikka.Kaari;
 import logiikka.Ruudukko;
 import logiikka.Solmu;
 import logiikka.Tyyppi;
+import tyokalut.Matematiikka;
 
 public class Fringe {
 
@@ -19,8 +20,8 @@ public class Fringe {
 
     public void etsiReitti() {
 
-        this.cache1 = new double[ruudukko.getX()*ruudukko.getY() + 1];
-        this.cache2 = new Solmu[ruudukko.getX()*ruudukko.getY() + 1];
+        this.cache1 = new double[ruudukko.getX() * ruudukko.getY() + 1];
+        this.cache2 = new Solmu[ruudukko.getX() * ruudukko.getY() + 1];
         this.reitti = new Lista();
 
 
@@ -50,14 +51,14 @@ public class Fringe {
                 int x = solmu.getX();
                 int y = solmu.getY();
 
-                double f = gAskeleet + ruudukko.pisteidenHeuristinen(x,y,
-                        ruudukko.getMaali().getX(),ruudukko.getMaali().getY());
+                double f = gAskeleet + ruudukko.pisteidenHeuristinen(x, y,
+                        ruudukko.getMaali().getX(), ruudukko.getMaali().getY());
 
                 if (f > fRaja) {
-                    fmin = Math.min(f, fmin);
+                    fmin = Matematiikka.minimi(f, fmin);
                     continue;
                 }
-                if (ruudukko.getTyyppi(x,y) == Tyyppi.MAALI) {
+                if (ruudukko.getTyyppi(x, y) == Tyyppi.MAALI) {
                     loydetty = true;
                     break;
                 }
@@ -71,8 +72,8 @@ public class Fringe {
 
 
 
-                    if (cache2[ruudukko.getJarjestysnumero(lapsi.getX(),lapsi.getY())] != null) {
-                        if (gLapsi >= cache1[ruudukko.getJarjestysnumero(lapsi.getX(),lapsi.getY())]) {
+                    if (cache2[ruudukko.getJarjestysnumero(lapsi.getX(), lapsi.getY())] != null) {
+                        if (gLapsi >= cache1[ruudukko.getJarjestysnumero(lapsi.getX(), lapsi.getY())]) {
                             continue;
                         }
                     }
@@ -83,8 +84,8 @@ public class Fringe {
 
                     tuleva.lisaa(lapsi);
 
-                    cache1[ruudukko.getJarjestysnumero(lapsi.getX(),lapsi.getY())] = gLapsi;
-                    cache2[ruudukko.getJarjestysnumero(lapsi.getX(),lapsi.getY())] = solmu;
+                    cache1[ruudukko.getJarjestysnumero(lapsi.getX(), lapsi.getY())] = gLapsi;
+                    cache2[ruudukko.getJarjestysnumero(lapsi.getX(), lapsi.getY())] = solmu;
 
                 }
                 nykyinen.poista(solmu);

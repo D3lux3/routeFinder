@@ -49,10 +49,7 @@ public class Main extends Application {
         Button resetNappi = new Button("Reset");
 
         Button etsiReitti = new Button("Etsi reitti");
-
-
-
-
+        
         Canvas screen = new Canvas(leveys, korkeus);
         GraphicsContext piirturi = screen.getGraphicsContext2D();
 
@@ -150,7 +147,7 @@ public class Main extends Application {
         etsiReitti.setOnAction((event -> {
             if (ruudukko.getAloitus() == null && ruudukko.getMaali() == null) {
                 new Alert(Alert.AlertType.ERROR, "Aseta aloituspiste ja maali!").show();
-            } else if(ruudukko.getAloitus() == null)  {
+            } else if (ruudukko.getAloitus() == null)  {
                 new Alert(Alert.AlertType.ERROR, "Aseta aloituspiste!").show();
             } else if (ruudukko.getMaali() == null) {
                 new Alert(Alert.AlertType.ERROR, "Aseta maali!").show();
@@ -166,8 +163,8 @@ public class Main extends Application {
                 djikstra.etsiReitti();
                 long loppu2 = System.nanoTime();
 
-                fringeAika.setText("Fringe: "+((loppu-alku)/1e9)+" s");
-                dijkstraAika.setText("Djikstra: "+((loppu2-alku2)/1e9)+" s");
+                fringeAika.setText("Fringe: " + ((loppu - alku) / 1e9) + " s");
+                dijkstraAika.setText("Djikstra: " + ((loppu2 - alku2) / 1e9) + " s");
             }
         }));
 
@@ -185,6 +182,8 @@ public class Main extends Application {
         buttonMenu.getChildren().addAll(seina, tyhja, aloitus, maali, resetNappi, etsiReitti);
 
         HBox infoPalkki = new HBox();
+
+
         infoPalkki.setSpacing(15);
         infoPalkki.getChildren().addAll(dijkstraVari, dijkstraAika, fridgeVari, fringeAika);
         borderPane.setBottom(infoPalkki);

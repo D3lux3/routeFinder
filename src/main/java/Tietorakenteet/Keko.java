@@ -2,7 +2,7 @@ package Tietorakenteet;
 
 import logiikka.Solmu;
 
-public class Keko{
+public class Keko {
 
     private Solmu[] solmut;
     private int indeksi;
@@ -10,7 +10,7 @@ public class Keko{
     /**
      * Luo Keko olion. Keon alkukooksi tulee 20.
      */
-    public Keko(){
+    public Keko() {
         this.solmut = new Solmu[20];
         indeksi = 0;
     }
@@ -63,7 +63,7 @@ public class Keko{
         if (vasen(p) == 0) {
             return;
         } else if (vasen(p) == indeksi) {
-             pienempiLapsi = vasen(p);
+            pienempiLapsi = vasen(p);
         } else {
             if (solmut[vasen(p)].compareTo(solmut[oikea(p)]) < 1) {
                 pienempiLapsi = vasen(p);
@@ -93,19 +93,21 @@ public class Keko{
     private int vasen(int p) {
         if (2 * p > indeksi) {
             return 0;
+        } else {
+            return 2 * p;
         }
-        else return 2 * p;
     }
 
     private int oikea(int p) {
         if (2 * p + 1 > indeksi) {
             return 0;
+        } else {
+            return 2 * p + 1;
         }
-        else return 2 * p + 1;
     }
 
     private int vanhempi(int p) {
-        return p/2;
+        return p / 2;
     }
 
     /**

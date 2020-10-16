@@ -1,6 +1,7 @@
 package logiikka;
 
 import Tietorakenteet.Lista;
+import tyokalut.Matematiikka;
 
 public class Ruudukko {
 
@@ -152,12 +153,12 @@ public class Ruudukko {
 
         for (int x = 0; x < this.x; x++) {
             for (int y = 0; y < this.y; y++) {
-                if (tarkistaParametrit(x,y)) {
-                    if (tarkistaParametrit(x -1, y) && this.getTyyppi(x - 1, y) == Tyyppi.TYHJA) {
-                        yhdistaNaapurit(ruudukko[x][y], ruudukko[x -1][y], 1);
+                if (tarkistaParametrit(x, y)) {
+                    if (tarkistaParametrit(x - 1, y) && this.getTyyppi(x - 1, y) == Tyyppi.TYHJA) {
+                        yhdistaNaapurit(ruudukko[x][y], ruudukko[x - 1][y], 1);
                     }
 
-                    if (tarkistaParametrit(x +1, y) && this.getTyyppi(x + 1, y) == Tyyppi.TYHJA) {
+                    if (tarkistaParametrit(x + 1, y) && this.getTyyppi(x + 1, y) == Tyyppi.TYHJA) {
                         yhdistaNaapurit(ruudukko[x][y], ruudukko[x + 1][y], 1);
                     }
 
@@ -170,8 +171,8 @@ public class Ruudukko {
                     }
 
                     //Diagonaaliset
-                    if (tarkistaParametrit(x -1, y - 1) && this.getTyyppi(x - 1, y - 1) == Tyyppi.TYHJA) {
-                        yhdistaNaapurit(ruudukko[x][y], ruudukko[x -1][y - 1], Math.sqrt(2));
+                    if (tarkistaParametrit(x - 1, y - 1) && this.getTyyppi(x - 1, y - 1) == Tyyppi.TYHJA) {
+                        yhdistaNaapurit(ruudukko[x][y], ruudukko[x - 1][y - 1], Math.sqrt(2));
                     }
 
                     if (tarkistaParametrit(x + 1, y + 1) && this.getTyyppi(x + 1, y + 1) == Tyyppi.TYHJA) {
@@ -261,7 +262,7 @@ public class Ruudukko {
                 this.maali = new Solmu(x, y, Tyyppi.MAALI);
             }
 
-                this.ruudukko[x][y] = new Solmu(x, y, tyyppi);
+            this.ruudukko[x][y] = new Solmu(x, y, tyyppi);
 
         }
     }
@@ -318,16 +319,30 @@ public class Ruudukko {
      * @return
      */
     public double pisteidenHeuristinen(int x1, int y1, int x2, int y2) {
-        int dx = Math.abs(x2 - x1);
-        int dy = Math.abs(y2 - y1);
+        int dx = Matematiikka.itseisarvo(x2 - x1);
+        int dy = Matematiikka.itseisarvo(y2 - y1);
 
-        int min = Math.min(dx, dy);
-        int max = Math.max(dx, dy);
+        int min = Matematiikka.minimi(dx, dy);
+        int max = Matematiikka.maksimi(dx, dy);
 
         int diakonaaliset = min;
         int suorat = max - min;
 
         return Math.sqrt(2) * diakonaaliset + suorat;
+    }
+
+    /**
+     * Palauttaa kahden pisteen välisen euklidisen heuristiikka arvion.
+     * @param x1
+     * @param y1
+     * @param x2
+     * @param y2
+     * @return
+     */
+    public double euklidinen(int x1, int y1, int x2, int y2) {
+        int dx = Matematiikka.itseisarvo(x2 - x1);
+        int dy = Matematiikka.itseisarvo(y2 - y1);
+        return Math.sqrt(dx * dx + dy * dy);
     }
 
 }
