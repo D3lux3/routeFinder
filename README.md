@@ -1,6 +1,11 @@
 # routeFinder :mag:
 
 
+### Käyttöohje :hammer_and_wrench:
+[Lataa](https://github.com/D3lux3/routeFinder/releases/tag/1) <br/>
+Jos ohjelma ei aukea klikkaamalla, käytä komentoa ```java -jar routeFinder-1.0.jar```.
+
+
 ### Dokumentaatio :pen:
 * [Määrittelydokumentti](https://github.com/D3lux3/routeFinder/blob/master/documentation/maarittely.md) :memo:
 * [Testausdokumentti](https://github.com/D3lux3/routeFinder/blob/master/documentation/testidokumentaatio.md) :test_tube:
