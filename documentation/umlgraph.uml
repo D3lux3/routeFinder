@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="1563.580810274997" y="894.0">SolmuTest</node>
+    <node x="1183.867261904762" y="311.0">logiikka.Solmu</node>
+    <node x="923.3125" y="1369.0">logiikka.Ruudukko</node>
+    <node x="59.74885961906443" y="904.0">tyokalut.Matematiikka</node>
+    <node x="1343.613548370235" y="1511.0">Tietorakenteet.Keko</node>
+    <node x="1058.423072179759" y="916.0">logiikka.Kaari</node>
+    <node x="354.1875" y="1522.0">ListaTest</node>
+    <node x="450.6410575374248" y="796.0">Tietorakenteet.Lista</node>
+    <node x="626.8790245607113" y="2204.0">RuudukkoTest</node>
+    <node x="1619.3736764688813" y="2643.0">DijkstraTest</node>
+    <node x="149.9768128673668" y="2654.0">FringeTest</node>
+    <node x="1133.1689055130923" y="2281.0">algoritmit.Djikstra</node>
+    <node x="1142.867261904762" y="0.0">logiikka.Tyyppi</node>
+    <node x="1410.630810274997" y="2226.0">KekoTest</node>
+    <node x="140.898255329942" y="2248.0">algoritmit.Fringe</node>
+    <node x="818.005659021213" y="2729.0">Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="logiikka.Ruudukko" target="logiikka.Ruudukko">
+      <point x="-131.0769230769231" y="322.5" />
+      <point x="934.2355769230769" y="2034.0" />
+      <point x="903.3125" y="2034.0" />
+      <point x="903.3125" y="1691.5" />
+      <point x="-142.0" y="-0.0" />
+    </edge>
+    <edge source="algoritmit.Fringe" target="tyokalut.Matematiikka">
+      <point x="-29.625" y="-125.5" />
+      <point x="229.773255329942" y="2144.0" />
+      <point x="115.24885961906443" y="2144.0" />
+      <point x="-55.5" y="83.5" />
+    </edge>
+    <edge source="ListaTest" target="Tietorakenteet.Lista">
+      <point x="-58.5" y="-169.5" />
+      <point x="412.6875" y="1349.0" />
+      <point x="500.7179806143479" y="1349.0" />
+      <point x="-42.923076923076906" y="191.5" />
+    </edge>
+    <edge source="SolmuTest" target="logiikka.Solmu">
+      <point x="-60.33333333333334" y="-93.5" />
+      <point x="1593.7474769416635" y="686.0" />
+      <point x="1327.2005952380953" y="686.0" />
+      <point x="57.333333333333314" y="147.5" />
+    </edge>
+    <edge source="algoritmit.Fringe" target="logiikka.Ruudukko">
+      <point x="88.875" y="-125.5" />
+      <point x="348.273255329942" y="2104.0" />
+      <point x="956.0817307692307" y="2104.0" />
+      <point x="-109.23076923076928" y="322.5" />
+    </edge>
+    <edge source="Main" target="algoritmit.Djikstra">
+      <point x="63.85714285714289" y="-39.5" />
+      <point x="956.3628018783559" y="2623.0" />
+      <point x="1251.6689055130923" y="2623.0" />
+      <point x="0.0" y="92.5" />
+    </edge>
+    <edge source="FringeTest" target="logiikka.Tyyppi">
+      <point x="-69.20000000000005" y="-114.5" />
+      <point x="167.27681286736674" y="2623.0" />
+      <point x="0.0" y="2623.0" />
+      <point x="0.0" y="251.0" />
+      <point x="1150.5036255411255" y="251.0" />
+      <point x="-76.36363636363637" y="115.5" />
+    </edge>
+    <edge source="FringeTest" target="FringeTest">
+      <point x="0.0" y="114.5" />
+      <point x="236.4768128673668" y="2903.0" />
+      <point x="129.9768128673668" y="2903.0" />
+      <point x="129.9768128673668" y="2768.5" />
+      <point x="-86.5" y="-0.0" />
+    </edge>
+    <edge source="logiikka.Kaari" target="logiikka.Solmu">
+      <point x="50.75" y="-71.5" />
+      <point x="1210.673072179759" y="776.0" />
+      <point x="1245.2958333333333" y="776.0" />
+      <point x="-24.571428571428555" y="147.5" />
+    </edge>
+    <edge source="algoritmit.Djikstra" target="logiikka.Ruudukko">
+      <point x="-78.99999999999989" y="-92.5" />
+      <point x="1172.6689055130923" y="2184.0" />
+      <point x="1174.5432692307693" y="2184.0" />
+      <point x="109.23076923076917" y="322.5" />
+    </edge>
+    <edge source="Main" target="logiikka.Tyyppi">
+      <point x="-21.285714285714334" y="-39.5" />
+      <point x="871.2199447354985" y="2623.0" />
+      <point x="873.3790245607113" y="2623.0" />
+      <point x="873.3790245607113" y="281.0" />
+      <point x="1196.3218073593075" y="281.0" />
+      <point x="-30.545454545454504" y="115.5" />
+    </edge>
+    <edge source="SolmuTest" target="logiikka.Tyyppi">
+      <point x="60.33333333333337" y="-93.5" />
+      <point x="1714.4141436083305" y="776.0" />
+      <point x="1680.3910714285714" y="776.0" />
+      <point x="1680.3910714285714" y="281.0" />
+      <point x="1257.4127164502165" y="281.0" />
+      <point x="30.545454545454504" y="115.5" />
+    </edge>
+    <edge source="ListaTest" target="ListaTest">
+      <point x="0.0" y="169.5" />
+      <point x="471.1875" y="1881.0" />
+      <point x="334.1875" y="1881.0" />
+      <point x="334.1875" y="1691.5" />
+      <point x="-117.0" y="-0.0" />
+    </edge>
+    <edge source="FringeTest" target="algoritmit.Fringe">
+      <point x="0.0" y="-114.5" />
+      <point x="236.4768128673668" y="2623.0" />
+      <point x="259.398255329942" y="2623.0" />
+      <point x="0.0" y="125.5" />
+    </edge>
+    <edge source="Tietorakenteet.Lista" target="Tietorakenteet.Lista">
+      <point x="-85.84615384615381" y="191.5" />
+      <point x="457.794903691271" y="1199.0" />
+      <point x="430.6410575374248" y="1199.0" />
+      <point x="430.6410575374248" y="987.5" />
+      <point x="-93.0" y="-0.0" />
+    </edge>
+    <edge source="logiikka.Ruudukko" target="tyokalut.Matematiikka">
+      <point x="-127.80000000000007" y="-322.5" />
+      <point x="937.5125" y="1279.0" />
+      <point x="226.24885961906443" y="1279.0" />
+      <point x="55.5" y="83.5" />
+    </edge>
+    <edge source="algoritmit.Djikstra" target="algoritmit.Djikstra">
+      <point x="-94.80000000000001" y="92.5" />
+      <point x="1156.8689055130924" y="2486.0" />
+      <point x="1113.1689055130923" y="2486.0" />
+      <point x="1113.1689055130923" y="2373.5" />
+      <point x="-118.5" y="-0.0" />
+    </edge>
+    <edge source="KekoTest" target="logiikka.Solmu">
+      <point x="55.0" y="-147.5" />
+      <point x="1603.130810274997" y="2174.0" />
+      <point x="1533.080810274997" y="2174.0" />
+      <point x="1533.080810274997" y="696.0" />
+      <point x="1319.0101190476191" y="696.0" />
+      <point x="49.14285714285717" y="147.5" />
+    </edge>
+    <edge source="algoritmit.Fringe" target="Tietorakenteet.Lista">
+      <point x="9.875" y="-125.5" />
+      <point x="269.273255329942" y="2064.0" />
+      <point x="312.6875" y="2064.0" />
+      <point x="312.6875" y="1329.0" />
+      <point x="472.10259599896335" y="1329.0" />
+      <point x="-71.53846153846143" y="191.5" />
+    </edge>
+    <edge source="logiikka.Ruudukko" target="Tietorakenteet.Lista">
+      <point x="-42.60000000000002" y="-322.5" />
+      <point x="1022.7125000000001" y="1249.0" />
+      <point x="586.5641344605017" y="1249.0" />
+      <point x="42.923076923076906" y="191.5" />
+    </edge>
+    <edge source="RuudukkoTest" target="RuudukkoTest">
+      <point x="0.0" y="169.5" />
+      <point x="739.3790245607113" y="2563.0" />
+      <point x="606.8790245607113" y="2563.0" />
+      <point x="606.8790245607113" y="2373.5" />
+      <point x="-112.5" y="-0.0" />
+    </edge>
+    <edge source="DijkstraTest" target="DijkstraTest">
+      <point x="0.0" y="125.5" />
+      <point x="1706.8736764688813" y="2914.0" />
+      <point x="1599.3736764688813" y="2914.0" />
+      <point x="1599.3736764688813" y="2768.5" />
+      <point x="-87.5" y="-0.0" />
+    </edge>
+    <edge source="KekoTest" target="Tietorakenteet.Keko">
+      <point x="-55.0" y="-147.5" />
+      <point x="1493.130810274997" y="2184.0" />
+      <point x="1485.8135483702351" y="2184.0" />
+      <point x="63.200000000000045" y="180.5" />
+    </edge>
+    <edge source="DijkstraTest" target="logiikka.Tyyppi">
+      <point x="76.5625" y="-125.5" />
+      <point x="1783.4361764688813" y="2623.0" />
+      <point x="1810.080810274997" y="2623.0" />
+      <point x="1810.080810274997" y="251.0" />
+      <point x="1303.2308982683983" y="251.0" />
+      <point x="76.36363636363637" y="115.5" />
+    </edge>
+    <edge source="algoritmit.Fringe" target="logiikka.Kaari">
+      <point x="69.125" y="-125.5" />
+      <point x="328.523255329942" y="2094.0" />
+      <point x="609.6875" y="2094.0" />
+      <point x="609.6875" y="1299.0" />
+      <point x="1083.798072179759" y="1299.0" />
+      <point x="-76.125" y="71.5" />
+    </edge>
+    <edge source="logiikka.Ruudukko" target="logiikka.Kaari">
+      <point x="14.199999999999932" y="-322.5" />
+      <point x="1079.5125" y="1309.0" />
+      <point x="1134.548072179759" y="1309.0" />
+      <point x="-25.375" y="71.5" />
+    </edge>
+    <edge source="RuudukkoTest" target="logiikka.Tyyppi">
+      <point x="-28.125" y="-169.5" />
+      <point x="711.2540245607113" y="2094.0" />
+      <point x="719.1046288498337" y="2094.0" />
+      <point x="719.1046288498337" y="271.0" />
+      <point x="1181.04908008658" y="271.0" />
+      <point x="-45.81818181818187" y="115.5" />
+    </edge>
+    <edge source="SolmuTest" target="SolmuTest">
+      <point x="0.0" y="93.5" />
+      <point x="1654.080810274997" y="1101.0" />
+      <point x="1543.580810274997" y="1101.0" />
+      <point x="1543.580810274997" y="987.5" />
+      <point x="-90.5" y="-0.0" />
+    </edge>
+    <edge source="algoritmit.Djikstra" target="logiikka.Kaari">
+      <point x="0.0" y="-92.5" />
+      <point x="1251.6689055130923" y="2184.0" />
+      <point x="1244.1861764688813" y="2184.0" />
+      <point x="1244.1861764688813" y="1319.0" />
+      <point x="1236.048072179759" y="1319.0" />
+      <point x="76.125" y="71.5" />
+    </edge>
+    <edge source="logiikka.Ruudukko" target="logiikka.Solmu">
+      <point x="71.0" y="-322.5" />
+      <point x="1136.3125" y="1329.0" />
+      <point x="1271.923072179759" y="1329.0" />
+      <point x="1271.923072179759" y="776.0" />
+      <point x="1253.4863095238095" y="776.0" />
+      <point x="-16.38095238095235" y="147.5" />
+    </edge>
+    <edge source="DijkstraTest" target="Tietorakenteet.Lista">
+      <point x="10.9375" y="-125.5" />
+      <point x="1717.8111764688813" y="2593.0" />
+      <point x="1777.080810274997" y="2593.0" />
+      <point x="1777.080810274997" y="1219.0" />
+      <point x="629.4872113835786" y="1219.0" />
+      <point x="85.84615384615381" y="191.5" />
+    </edge>
+    <edge source="algoritmit.Djikstra" target="logiikka.Tyyppi">
+      <point x="52.66666666666663" y="-92.5" />
+      <point x="1304.3355721797589" y="2184.0" />
+      <point x="1313.113548370235" y="2184.0" />
+      <point x="1313.113548370235" y="1349.0" />
+      <point x="1755.080810274997" y="1349.0" />
+      <point x="1755.080810274997" y="271.0" />
+      <point x="1272.6854437229438" y="271.0" />
+      <point x="45.81818181818187" y="115.5" />
+    </edge>
+    <edge source="logiikka.Ruudukko" target="logiikka.Tyyppi">
+      <point x="-14.200000000000045" y="-322.5" />
+      <point x="1051.1125" y="1289.0" />
+      <point x="1031.6790245607112" y="1289.0" />
+      <point x="1031.6790245607112" y="291.0" />
+      <point x="1211.5945346320348" y="291.0" />
+      <point x="-15.272727272727252" y="115.5" />
+    </edge>
+    <edge source="algoritmit.Fringe" target="logiikka.Solmu">
+      <point x="-88.875" y="-125.5" />
+      <point x="170.523255329942" y="2174.0" />
+      <point x="27.248859619064433" y="2174.0" />
+      <point x="27.248859619064433" y="726.0" />
+      <point x="1204.3434523809524" y="726.0" />
+      <point x="-65.52380952380952" y="147.5" />
+    </edge>
+    <edge source="algoritmit.Fringe" target="logiikka.Tyyppi">
+      <point x="-108.625" y="-125.5" />
+      <point x="150.773255329942" y="2184.0" />
+      <point x="16.248859619064433" y="2184.0" />
+      <point x="16.248859619064433" y="261.0" />
+      <point x="1165.7763528138528" y="261.0" />
+      <point x="-61.09090909090912" y="115.5" />
+    </edge>
+    <edge source="algoritmit.Djikstra" target="Tietorakenteet.Lista">
+      <point x="-26.33333333333337" y="-92.5" />
+      <point x="1225.3355721797589" y="2184.0" />
+      <point x="1228.8125000000002" y="2184.0" />
+      <point x="1228.8125000000002" y="1229.0" />
+      <point x="615.1795190758862" y="1229.0" />
+      <point x="71.53846153846143" y="191.5" />
+    </edge>
+    <edge source="RuudukkoTest" target="Tietorakenteet.Lista">
+      <point x="-84.375" y="-169.5" />
+      <point x="655.0040245607113" y="2094.0" />
+      <point x="650.8125" y="2094.0" />
+      <point x="650.8125" y="1289.0" />
+      <point x="543.6410575374248" y="1289.0" />
+      <point x="0.0" y="191.5" />
+    </edge>
+    <edge source="Main" target="logiikka.Ruudukko">
+      <point x="21.28571428571422" y="-39.5" />
+      <point x="913.7913733069272" y="2603.0" />
+      <point x="1078.725178406865" y="2603.0" />
+      <point x="1078.725178406865" y="2174.0" />
+      <point x="1109.0048076923078" y="2174.0" />
+      <point x="43.692307692307736" y="322.5" />
+    </edge>
+    <edge source="algoritmit.Djikstra" target="logiikka.Solmu">
+      <point x="26.33333333333337" y="-92.5" />
+      <point x="1278.0022388464258" y="2174.0" />
+      <point x="1302.113548370235" y="2174.0" />
+      <point x="1302.113548370235" y="746.0" />
+      <point x="1278.0577380952382" y="746.0" />
+      <point x="8.190476190476204" y="147.5" />
+    </edge>
+    <edge source="Tietorakenteet.Keko" target="Tietorakenteet.Keko">
+      <point x="-63.19999999999999" y="180.5" />
+      <point x="1359.413548370235" y="1892.0" />
+      <point x="1323.613548370235" y="1892.0" />
+      <point x="1323.613548370235" y="1691.5" />
+      <point x="-79.0" y="-0.0" />
+    </edge>
+    <edge source="logiikka.Solmu" target="logiikka.Tyyppi">
+      <point x="43.00000000000006" y="-147.5" />
+      <point x="1312.867261904762" y="291.0" />
+      <point x="1242.1399891774893" y="291.0" />
+      <point x="15.272727272727252" y="115.5" />
+    </edge>
+    <edge source="algoritmit.Djikstra" target="Tietorakenteet.Keko">
+      <point x="79.0" y="-92.5" />
+      <point x="1330.6689055130923" y="2174.0" />
+      <point x="1391.0135483702352" y="2174.0" />
+      <point x="-31.600000000000023" y="180.5" />
+    </edge>
+    <edge source="logiikka.Solmu" target="logiikka.Solmu">
+      <point x="-73.71428571428572" y="147.5" />
+      <point x="1196.1529761904762" y="636.0" />
+      <point x="1153.867261904762" y="636.0" />
+      <point x="1153.867261904762" y="384.75" />
+      <point x="-86.0" y="-73.75" />
+    </edge>
+    <edge source="algoritmit.Fringe" target="algoritmit.Fringe">
+      <point x="-94.79999999999995" y="125.5" />
+      <point x="164.59825532994205" y="2519.0" />
+      <point x="120.898255329942" y="2519.0" />
+      <point x="120.898255329942" y="2373.5" />
+      <point x="-118.5" y="-0.0" />
+    </edge>
+    <edge source="DijkstraTest" target="algoritmit.Djikstra">
+      <point x="-32.8125" y="-125.5" />
+      <point x="1674.0611764688813" y="2583.0" />
+      <point x="1346.4689055130925" y="2583.0" />
+      <point x="94.80000000000007" y="92.5" />
+    </edge>
+    <edge source="DijkstraTest" target="logiikka.Solmu">
+      <point x="32.8125" y="-125.5" />
+      <point x="1739.6861764688813" y="2603.0" />
+      <point x="1788.080810274997" y="2603.0" />
+      <point x="1788.080810274997" y="666.0" />
+      <point x="1343.5815476190476" y="666.0" />
+      <point x="73.71428571428572" y="147.5" />
+    </edge>
+    <edge source="DijkstraTest" target="logiikka.Ruudukko">
+      <point x="-76.5625" y="-125.5" />
+      <point x="1630.3111764688813" y="2603.0" />
+      <point x="1089.725178406865" y="2603.0" />
+      <point x="1089.725178406865" y="2184.0" />
+      <point x="1130.8509615384617" y="2184.0" />
+      <point x="65.53846153846155" y="322.5" />
+    </edge>
+    <edge source="FringeTest" target="logiikka.Ruudukko">
+      <point x="34.59999999999991" y="-114.5" />
+      <point x="271.0768128673667" y="2613.0" />
+      <point x="454.2268128673668" y="2613.0" />
+      <point x="454.2268128673668" y="2124.0" />
+      <point x="999.7740384615386" y="2124.0" />
+      <point x="-65.53846153846155" y="322.5" />
+    </edge>
+    <edge source="RuudukkoTest" target="logiikka.Ruudukko">
+      <point x="28.125" y="-169.5" />
+      <point x="767.5040245607113" y="2134.0" />
+      <point x="1021.6201923076924" y="2134.0" />
+      <point x="-43.692307692307736" y="322.5" />
+    </edge>
+    <edge source="Main" target="algoritmit.Fringe">
+      <point x="-42.571428571428555" y="-39.5" />
+      <point x="849.9342304497843" y="2593.0" />
+      <point x="354.19825532994196" y="2593.0" />
+      <point x="94.79999999999995" y="125.5" />
+    </edge>
+    <edge source="Tietorakenteet.Keko" target="logiikka.Solmu">
+      <point x="52.666666666666686" y="-180.5" />
+      <point x="1475.2802150369018" y="1339.0" />
+      <point x="1435.0522478974526" y="1339.0" />
+      <point x="1435.0522478974526" y="716.0" />
+      <point x="1302.6291666666666" y="716.0" />
+      <point x="32.76190476190476" y="147.5" />
+    </edge>
+    <edge source="KekoTest" target="logiikka.Tyyppi">
+      <point x="110.0" y="-147.5" />
+      <point x="1658.130810274997" y="2184.0" />
+      <point x="1766.080810274997" y="2184.0" />
+      <point x="1766.080810274997" y="261.0" />
+      <point x="1287.958170995671" y="261.0" />
+      <point x="61.09090909090912" y="115.5" />
+    </edge>
+    <edge source="KekoTest" target="KekoTest">
+      <point x="0.0" y="147.5" />
+      <point x="1548.130810274997" y="2541.0" />
+      <point x="1390.630810274997" y="2541.0" />
+      <point x="1390.630810274997" y="2373.5" />
+      <point x="-137.5" y="-0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8888888888888893" x="1223.6874999999995" y="667.9374999999997" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
