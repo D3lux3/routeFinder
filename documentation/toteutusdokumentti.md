@@ -1,5 +1,6 @@
 # Toteutusdokumentaatio
 
+Ohjelman käyttöliittymä on toteutettu käyttämällä JavaFX ja https://openjfx.io/. Projektissa vertaillaan Fringe algoritmiä Dijkstran algoritmiin.
 
 ## Rakenne
 
@@ -50,6 +51,15 @@ Luo lista tietorakenteen, jolla on vain tähän projektiin tarvittavat toiminnal
 
 #### Matematiikka
 Pitää sisällään vastineet javan Math.min ja Math.max vastineet.
+
+### Suorituskyky vertailua
+Suoritusaika on viiden ajon keskiarvo. Jostain syystä kun lisään seiniä, niin Fringe yleisesti on hitaampi.
+
+| Algoritmi | Aikavaativuus  | Suoritusaika |
+|-----------|----------------|--------------|
+| Fringe    | O(n^2)         | 0,02652764   |
+| Dijksrta  | O(n + m log m) | 0,07041012   |
+
 
 ## Puutteet ja parannettavaa
 
