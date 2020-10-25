@@ -1,7 +1,7 @@
 # Määrittelydokumentti
-#### Tekijä: Daniyal Haapaniemi
-#### Opinto-ohjelma: tietojenkäsittelytieteen kandidaatti
-#### Projektin nimi: routeFinder
+### Tekijä: Daniyal Haapaniemi
+### Opinto-ohjelma: tietojenkäsittelytieteen kandidaatti
+### Projektin nimi: routeFinder
 
 Työni on visuaalinen reitinhakija. :mag:
 Työni tulee vertailemaan **Fringe search** ja **Djikstra** algoritmejä keskenään.
