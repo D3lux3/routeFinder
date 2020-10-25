@@ -16,7 +16,8 @@
     - Lista
 - Työkalut
     - Matematiikka
-
+    
+## Luokkakaavio
 ![alt text](https://github.com/D3lux3/routeFinder/blob/master/documentation/luokkakaavio.jpg "UML luokkakaavio")
 
 ## Toteutus
