@@ -8,6 +8,7 @@ Jos ohjelma ei aukea klikkaamalla, käytä komentoa ```java -jar routeFinder-1.0
 
 ### Dokumentaatio :pen:
 * [Määrittelydokumentti](https://github.com/D3lux3/routeFinder/blob/master/documentation/maarittely.md) :memo:
+* [Toteutusdokumentti](https://github.com/D3lux3/routeFinder/blob/master/documentation/toteutusdokumentti.md) :scroll:
 * [Testausdokumentti](https://github.com/D3lux3/routeFinder/blob/master/documentation/testidokumentaatio.md) :test_tube:
 * [Viikkoraportti 1](https://github.com/D3lux3/routeFinder/blob/master/documentation/week1.md)
 * [Viikkoraportti 2](https://github.com/D3lux3/routeFinder/blob/master/documentation/week2.md)
