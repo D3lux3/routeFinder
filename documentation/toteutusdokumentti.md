@@ -3,37 +3,18 @@
 
 ## Rakenne
 
-### Algoritmit
-
-##### Dijkstra
-
-##### Fringe
-
-### Logiikka
-
-##### Kaari
-Lorem ipsum
-
-##### Ruudukko
-Ipsum lorem
-
-##### Solmu
-Lorem ipsum
-
-##### Tyyppi
-Ipsum lorem
-
-### Tietorakenteet
-
-##### Keko
-Lorem ipsum
-
-##### Lista
-Ipsum lorem
-
-### Työkalut
-
-##### Matematiikka
-Lorem ipsum
+- Algoritmit
+    - Fringe
+    - Dijkstra
+- Logiikka
+    - Kaari
+    - Ruudukko
+    - Solmu
+    - Tyyppi
+- Tietorakenteet
+    - Keko
+    - Lista
+- Työkalut
+    - Matematiikka
 
 ![alt text](https://github.com/D3lux3/routeFinder/blob/master/documentation/luokkakaavio.jpg "UML luokkakaavio")
