@@ -62,8 +62,7 @@ Suoritusaika on viiden ajon keskiarvo. Jostain syystä kun lisään seiniä, nii
 
 
 ## Puutteet ja parannettavaa
-
-
+Parannettavaa olisi ollut Fringen kanssa. Käytän siinä kahta listaa linkedlistin sijasta. Linkedlist toteutus olisi hiukan nopeuttanut algoritmiani.
 
 ## Lähteet
 <br/>
