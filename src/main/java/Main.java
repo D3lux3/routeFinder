@@ -49,7 +49,7 @@ public class Main extends Application {
         Button resetNappi = new Button("Reset");
 
         Button etsiReitti = new Button("Etsi reitti");
-        
+
         Canvas screen = new Canvas(leveys, korkeus);
         GraphicsContext piirturi = screen.getGraphicsContext2D();
 
