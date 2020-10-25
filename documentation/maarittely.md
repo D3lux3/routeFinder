@@ -10,7 +10,7 @@ Ohjelma tuotetaan Javalla ja JavaFXää käyttäen.
 <br /> 
 Ohjelma tulee olemaan suomen kielellä.
 
-Tavoittelen seuraavia aikavaatimuksia:
+Tavoittelen seuraavia pahimpia-aikavaatimuksia:
 * Fringe: _`O(n^2)`_
 * Dijkstra:   _`O(n + m log m)`_
 
